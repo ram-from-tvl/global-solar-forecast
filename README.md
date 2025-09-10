@@ -9,13 +9,15 @@
 
 [![ease of contribution: hard](https://img.shields.io/badge/ease%20of%20contribution:%20hard-bb2629)](https://github.com/openclimatefix#how-easy-is-it-to-get-involved)
 
-This project is about making a global solar forecast. We want to make a 0-48 hours forecast for every country in the world. 
+⚠️ This project is a working-in-progress
+
+This aim of this project is about making a global solar forecast. We want to make a 0-48 hours forecast for every country in the world. 
 
 We need to get the solar capacity for every countries, and then create a solar forecast.
 
-We get the solar capacities from mainly from Ember and make a solar forecast from open.quartz.solar. 
+We get the **solar capacities** from mainly from Ember and add a few in manually. 
 
-The solar forecast right now is very simple, 
+The **solar forecast** is very simple, 
 - as it assume one solar panel in the middle of the country, 
 - then we scaled it to the capacity of the country
 - We use `open.quartz.solar` which is for domestic solar, and uses free weather forecasts. 
