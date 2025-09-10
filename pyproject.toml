@@ -51,6 +51,9 @@ repository = "https://github.com/openclimatefix/global-solar-forecast"
 
 [tool.poetry]
 version = "0.0.1"
+packages = [
+    { include = "src/v1" },
+]
 # TODO get ride of these, currently need this for streamlit quick deploy
 
 [tool.setuptools]
