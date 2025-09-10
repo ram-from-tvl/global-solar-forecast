@@ -143,7 +143,27 @@ def main_page() -> None:
 def docs_page() -> None:
     """Documentation page."""
     st.header("Documentation")
-    st.write("This page will show documentation (coming soon)")
+    st.write("There are two main components to this app, the solar capacities and solar forecasts.")
+
+    st.subheader("Solar Capacities")
+    st.write("Most of the solar capacities are taken from the [Ember](https://ember-energy.org/data/electricity-data-explorer/). \
+            This data is updated yearly and shows the total installed solar capacity per country in Gigawatts (GW). \
+            Some countries are missing from the Ember dataset, so we have manually added some countries from other sources. ")
+    
+    st.subheader("Solar Forecasts")
+    st.write("The solar forecasts are taken from the [Quartz Open Solar API](https://open.quartz.solar/). \
+            The API provides solar forecasts for any location in the world, given the latitude, longitude and installed capacity. " \
+            "We use the centroid of each country as the location for the forecast")
+    
+    st.subheader("Caveats")
+    st.write("1. The solar capacities are yearly totals, so they do not account for new installations or decommissions within the year. ")
+    st.write("2. Some countries solar capacies are very well known, some are not.")
+    st.write("3. The Quartz Open Solar API uses a ML model trained on UK domestic solar data. \
+            It's an unknown how well this model performs in other countries. ")
+    st.write("4. We use the centroid of each country as the location for the forecast, \
+             but the solar capacity may be concentrated in a different area of the country.")
+
+
 
 
 if __name__ == "__main__":
