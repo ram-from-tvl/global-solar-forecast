@@ -5,9 +5,7 @@ import geopandas as gpd
 import pandas as pd
 import plotly.graph_objects as go
 import pycountry
-import requests
 import streamlit as st
-
 from forecast import get_forecast
 
 data_dir = "src/v1/data"
@@ -62,8 +60,8 @@ def country_page() -> None:
 
      # plot in ploty
     st.write(f"{country.name} Solar Forecast, capacity of {capacity} GW.")
-    fig = go.Figure(data=go.Scatter(x=forecast.index, 
-                                    y=forecast["power_gw"], 
+    fig = go.Figure(data=go.Scatter(x=forecast.index,
+                                    y=forecast["power_gw"],
                                     marker_color="#FF4901"))
     fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time")
     st.plotly_chart(fig)
