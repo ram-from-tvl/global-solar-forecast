@@ -6,36 +6,12 @@ import geopandas as gpd
 import pandas as pd
 import plotly.graph_objects as go
 import pycountry
-import requests
 import streamlit as st
 
+from country import country_page
+from forecast import get_forecast
+
 data_dir = "src/v1/data"
-
-
-@st.cache_data
-def get_forecast(name:str, capacity:float, lat:float, lon:float) -> pd.Series:
-    """Get solar forecast for a given location and capacity."""
-    if capacity == 0:
-        return None
-
-    site = {
-        "latitude": lat,
-        "longitude": lon,
-        "capacity_kwp": capacity,
-        "tilt": abs(lat) / 2,
-        "orientation": 180 if lat > 0 else 0,
-    }
-    now = pd.Timestamp.utcnow().floor("h").replace(tzinfo=None).isoformat()
-    data = {"site": site, "timestamp": now}
-    url = "https://open.quartz.solar/forecast/"
-
-    r = requests.post(url, json=data, timeout=20)
-
-    if r.status_code == 200:
-        forecast = r.json()
-        return forecast["predictions"]
-    else:
-        st.error(f"Error fetching forecast for {name}")
 
 
 def main_page() -> None:
@@ -161,58 +137,6 @@ def main_page() -> None:
                 margin={"r": 0, "t": 0, "l": 0, "b": 0},
                 geo_scope="world",
             )
-    st.plotly_chart(fig)
-
-def country_page() -> None:
-    """Country page, select a country and see the forecast for that country."""
-    st.header("Country Page")
-    st.write("This page will shows individual country forecasts")
-
-    # Lets load a map of the world
-    world = gpd.read_file(f"{data_dir}/countries.geojson")
-
-    countries = list(pycountry.countries)
-
-    # Get list of countries and their solar capcities now from the Ember API
-    solar_capacity_per_country_df = pd.read_csv(f"{data_dir}/solar_capacities.csv", index_col=0)
-
-    # remove nans in index
-    solar_capacity_per_country_df["temp"] = solar_capacity_per_country_df.index
-    solar_capacity_per_country_df.dropna(subset=["temp"], inplace=True)
-
-    # add column with country code and name
-    solar_capacity_per_country_df["country_code_and_name"] = \
-        solar_capacity_per_country_df.index + " - " + solar_capacity_per_country_df["country_name"]
-
-    # convert to dict
-    solar_capacity_per_country = solar_capacity_per_country_df.to_dict()["capacity_gw"]
-    country_code_and_names = list(solar_capacity_per_country_df["country_code_and_name"])
-
-    selected_country = st.selectbox("Select a country:", country_code_and_names, index=0)
-    selected_country_code = selected_country.split(" - ")[0]
-
-    country = next(c for c in countries if c.alpha_3 == selected_country_code)
-
-    country_map = world[world["adm0_a3"] == country.alpha_3]
-
-        # get centroid of country
-        # # hide warning about GeoSeries.to_crs
-    with warnings.catch_warnings():
-        warnings.filterwarnings("ignore")
-        centroid = country_map.geometry.to_crs(crs="EPSG:4326").centroid
-
-    lat = centroid.y.values[0]
-    lon = centroid.x.values[0]
-
-    capacity = solar_capacity_per_country[country.alpha_3]
-    forecast = get_forecast(country.name, capacity, lat, lon)
-    forecast = pd.DataFrame(forecast)
-    forecast = forecast.rename(columns={"power_kw": "power_gw"})
-
-     # plot in ploty
-    st.write(f"{country.name} Solar Forecast, capacity of {capacity} GW.")
-    fig = go.Figure(data=go.Scatter(x=forecast.index, y=forecast["power_gw"]))
-    fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time")
     st.plotly_chart(fig)
 
 
