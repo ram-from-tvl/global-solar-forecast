@@ -167,6 +167,7 @@ def docs_page() -> None:
             It's an unknown how well this model performs in other countries. ")
     st.write("4. We use the centroid of each country as the location for the forecast, \
              but the solar capacity may be concentrated in a different area of the country.")
+    st.write("5. The forecast right now is quite spiky, we are looking into smoothing it out a bit.")
 
 def capacities_page() -> None:
     """Solar capacities page."""
