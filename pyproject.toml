@@ -20,8 +20,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 dependencies = [
-    "loguru >= 0.7.3",
-    "numpy >= 1.23.2",
+    "loguru",
+    "numpy",
     "streamlit",
     "geopandas",
     "pycountry",
