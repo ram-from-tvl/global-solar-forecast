@@ -2,11 +2,10 @@
 
 **Starting point for OCF projects**
  
-[![workflows badge](https://img.shields.io/github/actions/workflow/status/openclimatefix/ocf-template/ci.yml?branch=maine&color=FFD053&label=workflow)](https://github.com/openclimatefix/ocf-template/actions/workflows/ci.yml)
-[![tags badge](https://img.shields.io/github/v/tag/openclimatefix/ocf-template?include_prereleases&sort=semver&color=FFAC5F)](https://github.com/openclimatefix/ocf-template/tags)
-[![pypi badge](https://img.shields.io/pypi/v/ocf-template?&color=07BCDF)](https://pypi.org/project/ocf-template)
-[![documentation badge](https://img.shields.io/badge/docs-latest-086788)](https://openclimatefix.github.io/ocf-template/)
-[![contributors badge](https://img.shields.io/github/contributors/openclimatefix/ocf-template?color=FFFFFF)](https://github.com/openclimatefix/ocf-template/graphs/contributors)
+[![workflows badge](https://img.shields.io/github/actions/workflow/status/openclimatefix/global-solar-forecast/ci.yml?branch=maine&color=FFD053&label=workflow)](https://github.com/openclimatefix/ocf-template/actions/workflows/ci.yml)
+[![tags badge](https://img.shields.io/github/v/tag/openclimatefix/global-solar-forecast?include_prereleases&sort=semver&color=FFAC5F)](https://github.com/openclimatefix/global-solar-forecast/tags)
+[![documentation badge](https://img.shields.io/badge/docs-latest-086788)](https://openclimatefix.github.io/global-solar-forecast/)
+[![contributors badge](https://img.shields.io/github/contributors/openclimatefix/ocf-template?color=FFFFFF)](https://github.com/openclimatefix/global-solar-forecast/graphs/contributors)
 
 [![ease of contribution: hard](https://img.shields.io/badge/ease%20of%20contribution:%20hard-bb2629)](https://github.com/openclimatefix#how-easy-is-it-to-get-involved)
 

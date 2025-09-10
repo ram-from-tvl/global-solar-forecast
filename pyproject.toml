@@ -47,7 +47,11 @@ dev = [
 ocf-template-cli = "ocf_template.main:main"
 
 [project.urls]
-repository = "https://github.com/openclimatefix/ocf-template"
+repository = "https://github.com/openclimatefix/global-solar-forecast"
+
+[tool.poetry]
+version = "0.0.1"
+# TODO get ride of these, currently need this for streamlit quick deploy
 
 [tool.setuptools]
 include-package-data = false
