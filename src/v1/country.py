@@ -14,7 +14,7 @@ data_dir = "src/v1/data"
 
 def country_page() -> None:
     """Country page, select a country and see the forecast for that country."""
-    st.header("Country Page")
+    st.header("Country Solar Forecast")
     st.write("This page will shows individual country forecasts")
 
     # Lets load a map of the world
