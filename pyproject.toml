@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 # Metadata (see https://peps.python.org/pep-0621/)
 [project]
-name = "ocf-template"
+name = "global-solar-forecast"
 dynamic = ["version"] # Set automtically using git: https://setuptools-git-versioning.readthedocs.io/en/stable/
 description = "Consise summary of project"
 readme = {file = "README.md", content-type = "text/markdown"}
@@ -22,6 +22,10 @@ classifiers = [
 dependencies = [
     "loguru >= 0.7.3",
     "numpy >= 1.23.2",
+    "streamlit",
+    "geopandas",
+    "pycountry",
+    "plotly",
 ]
 
 [dependency-groups]

@@ -1,0 +1,107 @@
+country_code,capacity_gw,country_name,source
+,15.38,Africa,Ember
+ARG,1.74,Argentina,Ember
+ARM,0.49,Armenia,Ember
+,30.46,ASEAN,Ember
+,1157.31,Asia,Ember
+AUS,38.47,Australia,Ember
+AUT,8.48,Austria,Ember
+AZE,0.29,Azerbaijan,Ember
+BGD,0.85,Bangladesh,Ember
+BLR,0.26,Belarus,Ember
+BEL,9.75,Belgium,Ember
+BOL,0.18,Bolivia,Ember
+BIH,0.21,Bosnia Herzegovina,Ember
+BRA,53.11,Brazil,Ember
+BGR,3.91,Bulgaria,Ember
+KHM,0.88,Cambodia,Ember
+CAN,6.11,Canada,Ember
+CHL,11.05,Chile,Ember
+CHN,887.93,China,Ember
+COL,1.39,Colombia,Ember
+CRI,0.07,Costa Rica,Ember
+HRV,0.86,Croatia,Ember
+CYP,0.72,Cyprus,Ember
+CZE,4.16,Czechia,Ember
+DNK,3.94,Denmark,Ember
+DOM,1.42,Dominican Republic (the),Ember
+ECU,0.03,Ecuador,Ember
+EGY,2.59,Egypt,Ember
+SLV,0.65,El Salvador,Ember
+EST,1.33,Estonia,Ember
+,304.41,EU,Ember
+,360.81,Europe,Ember
+FIN,1.2,Finland,Ember
+FRA,21.53,France,Ember
+,1748.74,G20,Ember
+,440.27,G7,Ember
+GEO,0.13,Georgia,Ember
+DEU,89.94,Germany,Ember
+GRC,9.27,Greece,Ember
+HUN,7.7,Hungary,Ember
+IND,97.38,India,Ember
+IRN,0.78,Iran (Islamic Republic of),Ember
+IRL,1.34,Ireland,Ember
+ITA,36.01,Italy,Ember
+JPN,91.61,Japan,Ember
+KAZ,1.2,Kazakhstan,Ember
+KEN,0.37,Kenya,Ember
+XKX,0.02,Kosovo,Ember
+KWT,0.1,Kuwait,Ember
+KGZ,0.0,Kyrgyzstan,Ember
+,85.82,Latin America and Caribbean,Ember
+LVA,0.47,Latvia,Ember
+LTU,2.57,Lithuania,Ember
+LUX,0.52,Luxembourg,Ember
+MYS,2.31,Malaysia,Ember
+MLT,0.23,Malta,Ember
+MEX,11.99,Mexico,Ember
+,23.05,Middle East,Ember
+MDA,0.34,Moldova,Ember
+MNG,0.14,Mongolia,Ember
+MNE,0.03,Montenegro,Ember
+MAR,0.93,Morocco,Ember
+MMR,0.22,Myanmar,Ember
+NLD,24.05,Netherlands,Ember
+NZL,0.57,New Zealand,Ember
+NGA,0.14,Nigeria,Ember
+,183.58,North America,Ember
+MKD,0.83,North Macedonia,Ember
+NOR,0.8,Norway,Ember
+,39.55,Oceania,Ember
+,711.08,OECD,Ember
+OMN,0.67,Oman,Ember
+PAK,1.4,Pakistan,Ember
+PER,0.53,Peru,Ember
+PHL,2.97,Philippines (the),Ember
+POL,20.2,Poland,Ember
+PRT,5.81,Portugal,Ember
+PRI,0.96,Puerto Rico,Ember
+QAT,1.68,Qatar,Ember
+ROU,4.69,Romania,Ember
+RUS,2.55,Russian Federation (the),Ember
+SAU,4.34,Saudi Arabia,Ember
+SRB,0.24,Serbia,Ember
+SGP,1.16,Singapore,Ember
+SVK,0.87,Slovakia,Ember
+SVN,1.31,Slovenia,Ember
+ZAF,6.67,South Africa,Ember
+KOR,26.65,South Korea,Ember
+ESP,38.59,Spain,Ember
+LKA,1.45,Sri Lanka,Ember
+SWE,4.96,Sweden,Ember
+CHE,7.79,Switzerland,Ember
+TWN,14.28,Taiwan,Ember
+TJK,0.0,Tajikistan,Ember
+THA,3.38,Thailand,Ember
+TUN,0.77,Tunisia,Ember
+TUR,19.88,Turkey,Ember
+ARE,6.01,United Arab Emirates,Ember
+GBR,17.6,United Kingdom,Ember
+USA,177.47,United States of America,Ember
+URY,0.33,Uruguay,Ember
+VNM,18.67,Viet Nam,Ember
+,1865.49,World,Ember
+UKR,1.2,Ukraine,Wikipedia
+TKM,0.0,Turkmenistan,www.theglobaleconomy.com
+DZA,0.46,Algeria,Wikipedia
