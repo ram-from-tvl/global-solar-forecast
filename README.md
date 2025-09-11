@@ -22,39 +22,26 @@ The **solar forecast** is very simple,
 - then we scaled it to the capacity of the country
 - We use `open.quartz.solar` which is for domestic solar, and uses free weather forecasts. 
 
-
 ![image](./dashboard.png)
-
-## Installation
-
-
-
 
 ## Example usage
 
-To start app run
-```uv run streamlit run src/v1/main.py```
-
-
-## Documentation
-
-
+TODO add weblink of where this is deployed
 
 
 ## FAQ
 
-
+See FAQs [here](FAQ.md)
 
 ## Development
 
-Thigns to do
-- Tidy up data, 
+In order to run the app locally, clone this repo and run `uv sync`. To start app run
+```uv run streamlit run src/v1/main.py```
 
 ### Running the test suite
 
-TODO
+Current there are not tests, but it would be great if some were added
  
-
 ## Contributing and community
 
 [![issues badge](https://img.shields.io/github/issues/openclimatefix/global-solar-forecast?color=FFAC5F)](https://github.com/openclimatefix/global-solar-forecast/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
