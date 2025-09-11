@@ -7,7 +7,9 @@ data_dir = "src/v1/data"
 
 
 @st.cache_data
-def get_forecast(name:str, capacity:float, lat:float, lon:float) -> pd.Series:
+def get_forecast(
+    name: str, capacity: float, lat: float, lon: float,
+) -> pd.Series:
     """Get solar forecast for a given location and capacity."""
     if capacity == 0:
         return None
