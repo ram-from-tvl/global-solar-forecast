@@ -63,7 +63,7 @@ def country_page() -> None:
     fig = go.Figure(data=go.Scatter(x=forecast.index,
                                     y=forecast["power_gw"],
                                     marker_color="#FF4901"))
-    fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time")
+    fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time", yaxis_range=[0, None])
     st.plotly_chart(fig)
 
 

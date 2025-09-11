@@ -105,7 +105,7 @@ def main_page() -> None:
     fig = go.Figure(data=go.Scatter(x=total_forecast["timestamp"],
                                     y=total_forecast["power_gw"],
                                     marker_color="#FF4901"))
-    fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time")
+    fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time", yaxis_range=[0, None])
     if not normalized:
         st.plotly_chart(fig)
 
