@@ -1,7 +1,7 @@
 """A Streamlit app to show global solar forecast."""
 import json
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
@@ -165,10 +165,11 @@ def docs_page() -> None:
     "so they do not account for new installations that year. ")
     st.write("2. Some countries solar capacies are very well known, some are not.")
     st.write("3. The Quartz Open Solar API uses a ML model trained on UK domestic solar data. \
-            It's an unknown how well this model performs in other countries. ")
+        It's an unknown how well this model performs in other countries. ")
     st.write("4. We use the centroid of each country as the location for the forecast, \
-             but the solar capacity may be concentrated in a different area of the country.")
-    st.write("5. The forecast right now is quite spiky, we are looking into smoothing it out a bit.")
+        but the solar capacity may be concentrated in a different area of the country.")
+    st.write("5. The forecast right now is quite spiky, " \
+        "we are looking into smoothing it out a bit.")
 
     faqs = Path("./FAQ.md").read_text()
     st.markdown(faqs)
