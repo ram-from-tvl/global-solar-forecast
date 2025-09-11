@@ -22,22 +22,30 @@ def main_page() -> None:
     world = gpd.read_file(f"{data_dir}/countries.geojson")
 
     # Get list of countries and their solar capcities now from the Ember API
-    solar_capacity_per_country_df = pd.read_csv(f"{data_dir}/solar_capacities.csv", index_col=0)
+    solar_capacity_per_country_df = pd.read_csv(
+        f"{data_dir}/solar_capacities.csv", index_col=0,
+    )
 
     # remove nans in index
     solar_capacity_per_country_df["temp"] = solar_capacity_per_country_df.index
     solar_capacity_per_country_df.dropna(subset=["temp"], inplace=True)
 
     # add column with country code and name
-    solar_capacity_per_country_df["country_code_and_name"] = \
-        solar_capacity_per_country_df.index + " - " + solar_capacity_per_country_df["country_name"]
+    solar_capacity_per_country_df["country_code_and_name"] = (
+        solar_capacity_per_country_df.index + " - " +
+        solar_capacity_per_country_df["country_name"]
+    )
 
     # convert to dict
-    solar_capacity_per_country = solar_capacity_per_country_df.to_dict()["capacity_gw"]
+    solar_capacity_per_country = solar_capacity_per_country_df.to_dict()[
+        "capacity_gw"
+    ]
     global_solar_capacity = solar_capacity_per_country_df["capacity_gw"].sum()
 
     # drop down menu in side bar
-    normalized = st.checkbox("Normalised each countries solar forecast (0-100%)", value=False)
+    normalized = st.checkbox(
+        "Normalised each countries solar forecast (0-100%)", value=False,
+    )
 
     # run forecast for that countries
     forecast_per_country = {}
@@ -83,7 +91,8 @@ def main_page() -> None:
     my_bar.progress(100, "Loaded all forecasts.")
     my_bar.empty()
 
-    # format forecast into pandas dataframe with columns, country code, timestamp, forecast_value
+    # format forecast into pandas dataframe with columns,
+    # country code, timestamp, forecast_value
     all_forecasts = []
     for country_code, forecast in forecast_per_country.items():
         forecast["country_code"] = country_code
@@ -104,22 +113,31 @@ def main_page() -> None:
     fig = go.Figure(data=go.Scatter(x=total_forecast["timestamp"],
                                     y=total_forecast["power_gw"],
                                     marker_color="#FF4901"))
-    fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time", yaxis_range=[0, None])
+    fig.update_layout(
+        yaxis_title="Power [GW]",
+        xaxis_title="Time",
+        yaxis_range=[0, None],
+    )
     if not normalized:
         st.plotly_chart(fig)
-    # now lets make a map plot, of the generation for different forecast horizons
+    # now lets make a map plot, of the generation for different forecast
+    # horizons
     # get available timestamps for the slider
     all_forecasts["timestamp"] = pd.to_datetime(all_forecasts["timestamp"])
     available_timestamps = sorted(all_forecasts["timestamp"].unique())
     # add slider to select forecast horizon
     st.subheader("Solar Forecast Map")
-    st.write("Use the slider below to view forecasts for different time horizons:")
+    st.write(
+        "Use the slider below to view forecasts for different time horizons:",
+    )
 
     # create slider with timestamp options
     if len(available_timestamps) > 0:
         # Calculate hours from now for better labels
         now = pd.Timestamp.utcnow().floor("h").replace(tzinfo=None)
-        hours_ahead = [(ts - now).total_seconds() / 3600 for ts in available_timestamps]
+        hours_ahead = [
+            (ts - now).total_seconds() / 3600 for ts in available_timestamps
+        ]
 
         # Create more descriptive slider labels
         def format_time_label(hours: float) -> str:
@@ -150,14 +168,21 @@ def main_page() -> None:
         )
 
         # get generation for selected timestamp
-        selected_generation = all_forecasts[all_forecasts["timestamp"] == selected_timestamp]
+        selected_generation = all_forecasts[
+            all_forecasts["timestamp"] == selected_timestamp
+        ]
         selected_generation = selected_generation[["country_code", "power_gw"]]
     else:
         st.error("No forecast data available for the map")
         return
 
     # join 'world' and 'selected_generation'
-    world = world.merge(selected_generation, how="left", left_on="adm0_a3", right_on="country_code")
+    world = world.merge(
+        selected_generation,
+        how="left",
+        left_on="adm0_a3",
+        right_on="country_code",
+    )
 
     shapes_dict = json.loads(world.to_json())
 
@@ -181,13 +206,17 @@ def main_page() -> None:
 def docs_page() -> None:
     """Documentation page."""
     st.markdown("# Documentation")
-    st.write("There are two main components to this app, the solar capacities and solar forecasts.")
+    st.write(
+        "There are two main components to this app, the solar capacities "
+        "and solar forecasts.",
+    )
 
     st.markdown("## Solar Capacities")
     st.write(
         "Most of the solar capacities are taken from the "
         "[Ember](https://ember-energy.org/data/electricity-data-explorer/). "
-        "This data is updated yearly and shows the total installed solar capacity "
+        "This data is updated yearly and shows the total installed "
+        "solar capacity "
         "per country in Gigawatts (GW). "
         "Some countries are missing from the Ember dataset, "
         "so we have manually added some countries from other sources.",
@@ -207,14 +236,19 @@ def docs_page() -> None:
         "1. The solar capacities are yearly totals, "
         "so they do not account for new installations that year.",
     )
-    st.write("2. Some countries solar capacies are very well known, some are not.")
     st.write(
-        "3. The Quartz Open Solar API uses a ML model trained on UK domestic solar data. "
+        "2. Some countries solar capacies are very well known, some are not.",
+    )
+    st.write(
+        "3. The Quartz Open Solar API uses a ML model trained on UK "
+        "domestic solar data. "
         "It's an unknown how well this model performs in other countries.",
     )
     st.write(
-        "4. We use the centroid of each country as the location for the forecast, "
-        "but the solar capacity may be concentrated in a different area of the country.",
+        "4. We use the centroid of each country as the location for "
+        "the forecast, "
+        "but the solar capacity may be concentrated in a different area "
+        "of the country.",
     )
     st.write(
         "5. The forecast right now is quite spiky, "
@@ -229,7 +263,9 @@ def capacities_page() -> None:
     """Solar capacities page."""
     st.header("Solar Capacities")
     st.write("This page shows the solar capacities per country.")
-    solar_capacity_per_country_df = pd.read_csv(f"{data_dir}/solar_capacities.csv", index_col=0)
+    solar_capacity_per_country_df = pd.read_csv(
+        f"{data_dir}/solar_capacities.csv", index_col=0,
+    )
 
     # remove nans in index
     solar_capacity_per_country_df["temp"] = solar_capacity_per_country_df.index

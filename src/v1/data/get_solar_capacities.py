@@ -32,11 +32,26 @@ df.set_index("country_code", inplace=True)
 # manually add some countries
 # Lots more to add ...
 manual_countries = {
-    "UKR": {"country_name": "Ukraine", "capacity_gw": 1.2, "source": "Wikipedia"},
-    "TKM": {"country_name": "Turkmenistan", "capacity_gw": 0.0,
-            "source": "www.theglobaleconomy.com"},
-    "DZA": {"country_name": "Algeria", "capacity_gw": 0.46, "source": "Wikipedia"},
-    "SEN": {"country_name": "Senegal", "capacity_gw": 0.26, "source": "Wikipedia"},
+    "UKR": {
+        "country_name": "Ukraine",
+        "capacity_gw": 1.2,
+        "source": "Wikipedia",
+    },
+    "TKM": {
+        "country_name": "Turkmenistan",
+        "capacity_gw": 0.0,
+        "source": "www.theglobaleconomy.com",
+    },
+    "DZA": {
+        "country_name": "Algeria",
+        "capacity_gw": 0.46,
+        "source": "Wikipedia",
+    },
+    "SEN": {
+        "country_name": "Senegal",
+        "capacity_gw": 0.26,
+        "source": "Wikipedia",
+    },
 }
 
 manual_countries_df = pd.DataFrame.from_dict(manual_countries, orient="index")
