@@ -14,6 +14,13 @@ data_dir = "src/v1/data"
 def country_page() -> None:
     """Country page, select a country and see the forecast for that country."""
     st.header("Country Solar Forecast")
+    
+    # Add back button
+    if st.button("← Back to Global Map"):
+        st.session_state.show_country_page = False
+        st.rerun()
+        return
+    
     st.write("This page will shows individual country forecasts")
 
     # Lets load a map of the world
@@ -44,9 +51,17 @@ def country_page() -> None:
         solar_capacity_per_country_df["country_code_and_name"],
     )
 
-    selected_country = st.selectbox(
-        "Select a country:", country_code_and_names, index=0,
-    )
+    default_index = 0
+    if "selected_country_code" in st.session_state:
+        selected_code = st.session_state.selected_country_code
+        for i, country_name in enumerate(country_code_and_names):
+            if country_name.startswith(selected_code + " - "):
+                default_index = i
+                break
+        # Clear the session state after using it
+        del st.session_state.selected_country_code
+
+    selected_country = st.selectbox("Select a country:", country_code_and_names, index=default_index)
     selected_country_code = selected_country.split(" - ")[0]
 
     country = next(c for c in countries if c.alpha_3 == selected_country_code)

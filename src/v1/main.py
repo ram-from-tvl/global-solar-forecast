@@ -16,6 +16,13 @@ data_dir = "src/v1/data"
 
 def main_page() -> None:
     """Main page, show a map of the world with the solar forecast."""
+    # Check if we should show country page instead
+    if st.session_state.get("show_country_page", False):
+        # Import and show country page
+        from country import country_page
+        country_page()
+        return
+        
     st.header("Global Solar Forecast")
 
     # Lets load a map of the world
@@ -194,6 +201,8 @@ def main_page() -> None:
         colorscale="Viridis",
         colorbar_title="Power [GW]",
         marker_opacity=0.5,
+        hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>",
+        customdata=world["country_name"] if "country_name" in world.columns else world["adm0_a3"],
     ))
 
     fig.update_layout(
@@ -201,7 +210,24 @@ def main_page() -> None:
                 margin={"r": 0, "t": 0, "l": 0, "b": 0},
                 geo_scope="world",
             )
-    st.plotly_chart(fig)
+    
+    clicked_data = st.plotly_chart(fig, on_select="rerun", key="world_map")
+    
+    if clicked_data and clicked_data["selection"]["points"]:
+        selected_point = clicked_data["selection"]["points"][0]
+        clicked_country_index = selected_point["location"]
+        
+        if clicked_country_index < len(world):
+            clicked_country_code = world.iloc[clicked_country_index]["adm0_a3"]
+            
+            if clicked_country_code in solar_capacity_per_country:
+                st.session_state.selected_country_code = clicked_country_code
+                st.session_state.show_country_page = True
+                st.rerun()
+            else:
+                st.warning(f"No forecast data available for the selected country")
+    
+    
 
 
 def docs_page() -> None:
