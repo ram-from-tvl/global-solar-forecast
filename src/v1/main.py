@@ -114,19 +114,19 @@ def main_page() -> None:
     # get available timestamps for the slider
     all_forecasts["timestamp"] = pd.to_datetime(all_forecasts["timestamp"])
     available_timestamps = sorted(all_forecasts["timestamp"].unique())
-    
+
     # add slider to select forecast horizon
     st.subheader("Solar Forecast Map")
     st.write("Use the slider below to view forecasts for different time horizons:")
-    
+
     # create slider with timestamp options
     if len(available_timestamps) > 0:
         # Calculate hours from now for better labels
         now = pd.Timestamp.utcnow().floor("h").replace(tzinfo=None)
         hours_ahead = [(ts - now).total_seconds() / 3600 for ts in available_timestamps]
-        
+
         # Create more descriptive slider labels
-        def format_time_label(hours):
+        def format_time_label(hours: float) -> str:
             if hours <= 0:
                 return "Now"
             elif hours < 24:
@@ -134,22 +134,25 @@ def main_page() -> None:
             else:
                 days = int(hours // 24)
                 return f"+{days} day(s)"
-        
+
         selected_timestamp_index = st.slider(
-            "Select Forecast Time", 
-            min_value=0, 
-            max_value=len(available_timestamps) - 1, 
+            "Select Forecast Time",
+            min_value=0,
+            max_value=len(available_timestamps) - 1,
             value=0,
             format="%d",
-            help="Move slider to see forecasts at different times"
+            help="Move slider to see forecasts at different times",
         )
-        
+
         selected_timestamp = available_timestamps[selected_timestamp_index]
         hours_from_now = hours_ahead[selected_timestamp_index]
         time_label = format_time_label(hours_from_now)
-        
-        st.info(f"**Selected Time**: {time_label} | {selected_timestamp.strftime('%Y-%m-%d %H:%M')} UTC")
-        
+
+        st.info(
+            f"**Selected Time**: {time_label} | "
+            f"{selected_timestamp.strftime('%Y-%m-%d %H:%M')} UTC",
+        )
+
         # get generation for selected timestamp
         selected_generation = all_forecasts[all_forecasts["timestamp"] == selected_timestamp]
         selected_generation = selected_generation[["country_code", "power_gw"]]
