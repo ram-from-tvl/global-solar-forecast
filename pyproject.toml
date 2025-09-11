@@ -26,6 +26,8 @@ dependencies = [
     "geopandas",
     "pycountry",
     "plotly",
+    "pytz",
+    "timezonefinder",
 ]
 
 [dependency-groups]
