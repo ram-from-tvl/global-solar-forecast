@@ -11,7 +11,6 @@ from forecast import get_forecast
 data_dir = "src/v1/data"
 
 
-
 def country_page() -> None:
     """Country page, select a country and see the forecast for that country."""
     st.header("Country Solar Forecast")
@@ -44,8 +43,8 @@ def country_page() -> None:
 
     country_map = world[world["adm0_a3"] == country.alpha_3]
 
-        # get centroid of country
-        # # hide warning about GeoSeries.to_crs
+    # get centroid of country
+    # hide warning about GeoSeries.to_crs
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore")
         centroid = country_map.geometry.to_crs(crs="EPSG:4326").centroid
@@ -58,12 +57,10 @@ def country_page() -> None:
     forecast = pd.DataFrame(forecast)
     forecast = forecast.rename(columns={"power_kw": "power_gw"})
 
-     # plot in ploty
+    # plot in ploty
     st.write(f"{country.name} Solar Forecast, capacity of {capacity} GW.")
     fig = go.Figure(data=go.Scatter(x=forecast.index,
                                     y=forecast["power_gw"],
                                     marker_color="#FF4901"))
     fig.update_layout(yaxis_title="Power [GW]", xaxis_title="Time", yaxis_range=[0, None])
     st.plotly_chart(fig)
-
-

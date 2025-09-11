@@ -6,7 +6,10 @@ country_code, capacity_gw, country_name, source
 
 import pandas as pd
 
-url = "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/yearly_full_release_long_format.csv"
+url = (
+    "https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/"
+    "yearly_full_release_long_format.csv"
+)
 
 # read csv into pandas dataframe
 df = pd.read_csv(url)
