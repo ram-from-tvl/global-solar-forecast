@@ -118,6 +118,7 @@ def main_page() -> None:
         xaxis_title="Time",
         yaxis_range=[0, None],
     )
+
     if not normalized:
         st.plotly_chart(fig)
     # now lets make a map plot, of the generation for different forecast
