@@ -22,7 +22,7 @@ def main_page() -> None:
         from country import country_page
         country_page()
         return
-        
+
     st.header("Global Solar Forecast")
 
     # Lets load a map of the world
@@ -55,7 +55,7 @@ def main_page() -> None:
     )
 
     # run forecast for that countries
-    forecast_per_country = {}
+    forecast_per_country: dict[str, pd.DataFrame] = {}
     my_bar = st.progress(0)
     countries = list(pycountry.countries)
     for i in range(len(countries)):
@@ -82,12 +82,11 @@ def main_page() -> None:
         lon = centroid.x.values[0]
 
         capacity = solar_capacity_per_country[country.alpha_3]
-        forecast = get_forecast(country.name, capacity, lat, lon)
+        forecast_data = get_forecast(country.name, capacity, lat, lon)
 
-        if forecast:
-            forecast = pd.DataFrame(forecast)
+        if forecast_data:
+            forecast = pd.DataFrame(forecast_data)
             forecast = forecast.rename(columns={"power_kw": "power_gw"})
-            forecast_per_country[country.alpha_3] = forecast
 
             # display normalized forecast
             if normalized:
@@ -100,19 +99,19 @@ def main_page() -> None:
 
     # format forecast into pandas dataframe with columns,
     # country code, timestamp, forecast_value
-    all_forecasts = []
+    all_forecasts: list[pd.DataFrame] = []
     for country_code, forecast in forecast_per_country.items():
         forecast["country_code"] = country_code
         all_forecasts.append(forecast)
 
     # concatenate all forecasts into a single dataframe
-    all_forecasts = pd.concat(all_forecasts, ignore_index=False)
-    all_forecasts.index.name = "timestamp"
-    all_forecasts = all_forecasts.reset_index()
+    all_forecasts_df = pd.concat(all_forecasts, ignore_index=False)
+    all_forecasts_df.index.name = "timestamp"
+    all_forecasts_df = all_forecasts_df.reset_index()
 
     # plot the total amount forecasted
     # group by country code and timestamp
-    total_forecast = all_forecasts[["timestamp", "power_gw"]]
+    total_forecast = all_forecasts_df[["timestamp", "power_gw"]]
     total_forecast = total_forecast.groupby(["timestamp"]).sum().reset_index()
 
     # plot in ploty
@@ -131,8 +130,8 @@ def main_page() -> None:
     # now lets make a map plot, of the generation for different forecast
     # horizons
     # get available timestamps for the slider
-    all_forecasts["timestamp"] = pd.to_datetime(all_forecasts["timestamp"])
-    available_timestamps = sorted(all_forecasts["timestamp"].unique())
+    all_forecasts_df["timestamp"] = pd.to_datetime(all_forecasts_df["timestamp"])
+    available_timestamps = sorted(all_forecasts_df["timestamp"].unique())
     # add slider to select forecast horizon
     st.subheader("Solar Forecast Map")
     st.write(
@@ -176,8 +175,8 @@ def main_page() -> None:
         )
 
         # get generation for selected timestamp
-        selected_generation = all_forecasts[
-            all_forecasts["timestamp"] == selected_timestamp
+        selected_generation = all_forecasts_df[
+            all_forecasts_df["timestamp"] == selected_timestamp
         ]
         selected_generation = selected_generation[["country_code", "power_gw"]]
     else:
@@ -210,24 +209,24 @@ def main_page() -> None:
                 margin={"r": 0, "t": 0, "l": 0, "b": 0},
                 geo_scope="world",
             )
-    
+
     clicked_data = st.plotly_chart(fig, on_select="rerun", key="world_map")
-    
+
     if clicked_data and clicked_data["selection"]["points"]:
         selected_point = clicked_data["selection"]["points"][0]
         clicked_country_index = selected_point["location"]
-        
+
         if clicked_country_index < len(world):
             clicked_country_code = world.iloc[clicked_country_index]["adm0_a3"]
-            
+
             if clicked_country_code in solar_capacity_per_country:
                 st.session_state.selected_country_code = clicked_country_code
                 st.session_state.show_country_page = True
                 st.rerun()
             else:
-                st.warning(f"No forecast data available for the selected country")
-    
-    
+                st.warning("No forecast data available for the selected country")
+
+
 
 
 def docs_page() -> None:
