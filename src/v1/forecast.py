@@ -1,4 +1,6 @@
 """Functions to get solar forecast data."""
+from typing import Any
+
 import pandas as pd
 import requests
 import streamlit as st
@@ -9,7 +11,7 @@ data_dir = "src/v1/data"
 @st.cache_data
 def get_forecast(
     name: str, capacity: float, lat: float, lon: float,
-) -> pd.Series:
+) -> list[dict[str, Any]] | None:
     """Get solar forecast for a given location and capacity."""
     if capacity == 0:
         return None
@@ -29,6 +31,8 @@ def get_forecast(
 
     if r.status_code == 200:
         forecast = r.json()
-        return forecast["predictions"]
+        predictions: list[dict[str, Any]] = forecast["predictions"]
+        return predictions
     else:
         st.error(f"Error fetching forecast for {name}")
+        return None

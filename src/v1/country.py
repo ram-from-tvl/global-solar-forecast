@@ -63,8 +63,11 @@ def country_page() -> None:
     lon = centroid.x.values[0]
 
     capacity = solar_capacity_per_country[country.alpha_3]
-    forecast = get_forecast(country.name, capacity, lat, lon)
-    forecast = pd.DataFrame(forecast)
+    forecast_data = get_forecast(country.name, capacity, lat, lon)
+    if forecast_data is None:
+        st.error(f"Unable to get forecast for {country.name}")
+        return
+    forecast = pd.DataFrame(forecast_data)
     forecast = forecast.rename(columns={"power_kw": "power_gw"})
 
     # plot in ploty
