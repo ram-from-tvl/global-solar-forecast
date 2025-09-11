@@ -1,6 +1,6 @@
 # OCF Template
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 **Starting point for OCF projects**
@@ -67,6 +67,7 @@ Current there are not tests, but it would be great if some were added
       <td align="center" valign="top" width="14.28%"><a href="http://openclimatefix.org"><img src="https://avatars.githubusercontent.com/u/38562875?v=4?s=100" width="100px;" alt="dantravers"/><br /><sub><b>dantravers</b></sub></a><br /><a href="#ideas-dantravers" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/zakwatts"><img src="https://avatars.githubusercontent.com/u/47150349?v=4?s=100" width="100px;" alt="Megawattz"/><br /><sub><b>Megawattz</b></sub></a><br /><a href="#ideas-zakwatts" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.linkedin.com/in/ram-from-tvl"><img src="https://avatars.githubusercontent.com/u/114728749?v=4?s=100" width="100px;" alt="Ramkumar R"/><br /><sub><b>Ramkumar R</b></sub></a><br /><a href="#design-ram-from-tvl" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ritkaarsingh30"><img src="https://avatars.githubusercontent.com/u/85431642?v=4?s=100" width="100px;" alt="Ritkaar Singh"/><br /><sub><b>Ritkaar Singh</b></sub></a><br /><a href="https://github.com/openclimatefix/global-solar-forecast/commits?author=ritkaarsingh30" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
