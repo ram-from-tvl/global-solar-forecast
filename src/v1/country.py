@@ -14,12 +14,6 @@ data_dir = "src/v1/data"
 def country_page() -> None:
     """Country page, select a country and see the forecast for that country."""
     st.header("Country Solar Forecast")
-
-    # Add back button
-    if st.button("← Back to Global Map"):
-        st.session_state.show_country_page = False
-        st.rerun()
-
     st.write("This page will shows individual country forecasts")
 
     # Lets load a map of the world

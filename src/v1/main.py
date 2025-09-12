@@ -16,13 +16,6 @@ data_dir = "src/v1/data"
 
 def main_page() -> None:
     """Main page, show a map of the world with the solar forecast."""
-    # Check if we should show country page instead
-    if st.session_state.get("show_country_page", False):
-        # Import and show country page
-        from country import country_page
-        country_page()
-        return
-
     st.header("Global Solar Forecast")
 
     # Lets load a map of the world
@@ -221,8 +214,7 @@ def main_page() -> None:
 
             if clicked_country_code in solar_capacity_per_country:
                 st.session_state.selected_country_code = clicked_country_code
-                st.session_state.show_country_page = True
-                st.rerun()
+                st.switch_page(country_page_ref)
             else:
                 st.warning("No forecast data available for the selected country")
 
@@ -302,10 +294,12 @@ def capacities_page() -> None:
 
 
 if __name__ == "__main__":
+    country_page_ref = st.Page(country_page, title="Country")
+    
     pg = st.navigation([
-        st.Page(main_page, title="🌍 Global", default=True),
-        st.Page(country_page, title="🏳️ Country"),
-        st.Page(docs_page, title="📝 About"),
-        st.Page(capacities_page, title="☀️ Capacities"),
+        st.Page(main_page, title="Global", default=True),
+        country_page_ref,
+        st.Page(docs_page, title="About"),
+        st.Page(capacities_page, title="Capacities"),
     ], position="top")
     pg.run()
