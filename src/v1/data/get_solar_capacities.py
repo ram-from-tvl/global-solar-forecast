@@ -344,7 +344,7 @@ manual_countries = {
     "BWA": {
         "country_name": "Botswana",
         "capacity_gw": 0.006,
-        "source": "www.pv-magazine.com/"
+        "source": "www.pv-magazine.com/",
     },
 
 }
