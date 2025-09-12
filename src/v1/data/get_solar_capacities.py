@@ -341,6 +341,12 @@ manual_countries = {
             "installed-solar-pv-capacity"
         ),
     },
+    "BWA": {
+        "country_name": "Botswana",
+        "capacity_gw": 0.006,
+        "source": "www.pv-magazine.com/",
+    },
+
 }
 
 manual_countries_df = pd.DataFrame.from_dict(manual_countries, orient="index")
