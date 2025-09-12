@@ -77,7 +77,7 @@ def main_page() -> None:
         capacity = solar_capacity_per_country[country.alpha_3]
         forecast_data = get_forecast(country.name, capacity, lat, lon)
 
-        if forecast_data:
+        if forecast_data is not None:
             forecast = pd.DataFrame(forecast_data)
             forecast = forecast.rename(columns={"power_kw": "power_gw"})
 
