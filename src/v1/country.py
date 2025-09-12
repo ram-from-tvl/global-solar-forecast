@@ -44,8 +44,18 @@ def country_page() -> None:
         solar_capacity_per_country_df["country_code_and_name"],
     )
 
+    default_index = 0
+    if "selected_country_code" in st.session_state:
+        selected_code = st.session_state.selected_country_code
+        for i, country_name in enumerate(country_code_and_names):
+            if country_name.startswith(selected_code + " - "):
+                default_index = i
+                break
+        # Clear the session state after using it
+        del st.session_state.selected_country_code
+
     selected_country = st.selectbox(
-        "Select a country:", country_code_and_names, index=0,
+        "Select a country:", country_code_and_names, index=default_index,
     )
     selected_country_code = selected_country.split(" - ")[0]
 
