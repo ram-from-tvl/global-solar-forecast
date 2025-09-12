@@ -295,7 +295,7 @@ def capacities_page() -> None:
 
 if __name__ == "__main__":
     country_page_ref = st.Page(country_page, title="Country")
-    
+
     pg = st.navigation([
         st.Page(main_page, title="Global", default=True),
         country_page_ref,
