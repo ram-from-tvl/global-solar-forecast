@@ -26,6 +26,7 @@ dependencies = [
     "geopandas",
     "pycountry",
     "plotly",
+    "scipy"
 ]
 
 [dependency-groups]
@@ -42,6 +43,7 @@ dev = [
     "python-lsp-server",
     "pylsp-mypy",
     "python-lsp-ruff",
+    "scipy-stubs",
 ]
 
 [project.scripts]
