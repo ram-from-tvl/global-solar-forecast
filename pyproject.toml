@@ -26,7 +26,7 @@ dependencies = [
     "geopandas",
     "pycountry",
     "plotly",
-    "pytz",
+    "scipy",
     "timezonefinder",
 ]
 
@@ -38,10 +38,13 @@ dev = [
     # Linting and type checking
     "mypy",
     "ruff >= 0.9.2",
+    "pandas-stubs",
+    "types-requests",
     # LSP Support
     "python-lsp-server",
     "pylsp-mypy",
     "python-lsp-ruff",
+    "scipy-stubs",
 ]
 
 [project.scripts]
@@ -71,14 +74,10 @@ enabled = true
 # * See https://mypy.readthedocs.io/en/stable/index.html
 [tool.mypy]
 python_version = "3.12"
-dmypy = true
 strict = true
 warn_unreachable = true
 warn_return_any = true
 disallow_untyped_defs = true
-plugins = [
-    "numpy.typing.mypy_plugin",
-]
 
 [[tool.mypy.overrides]]
 # Ignore missing imports for libraries that don't have them.
@@ -87,6 +86,9 @@ module = [
     "fsspec",
     "s3fs",
     "zarr",
+    "geopandas",
+    "plotly.*",
+    "streamlit.*",
 ]
 ignore_missing_imports = true
 
