@@ -23,15 +23,15 @@ def get_country_timezone(lat: float, lon: float) -> str:
 def convert_utc_to_local_time(forecast_df: pd.DataFrame, timezone_str: str) -> pd.DataFrame:
     """Convert UTC timestamps to local time for a given timezone."""
     forecast_df = forecast_df.copy()
-    
+
     # Convert index to datetime if it's not already
     if not isinstance(forecast_df.index, pd.DatetimeIndex):
         forecast_df.index = pd.to_datetime(forecast_df.index)
-    
+
     # Ensure index is UTC
     if forecast_df.index.tz is None:
-        forecast_df.index = forecast_df.index.tz_localize('UTC')
-    
+        forecast_df.index = forecast_df.index.tz_localize("UTC")
+
     # Convert to local timezone
     try:
         local_tz = ZoneInfo(timezone_str)
@@ -39,7 +39,7 @@ def convert_utc_to_local_time(forecast_df: pd.DataFrame, timezone_str: str) -> p
     except Exception:
         # If timezone conversion fails, keep as UTC
         st.warning(f"Could not convert to timezone {timezone_str}, using UTC")
-    
+
     return forecast_df
 
 
@@ -110,17 +110,17 @@ def country_page() -> None:
 
     capacity = solar_capacity_per_country[country.alpha_3]
     forecast_data = get_forecast(country.name, capacity, lat, lon)
-    
+
     if forecast_data is None:
         st.error(f"Unable to get forecast for {country.name}")
         return
-        
+
     forecast = pd.DataFrame(forecast_data)
     forecast = forecast.rename(columns={"power_kw": "power_gw"})
-    
+
     # Convert timestamps to local time
     forecast = convert_utc_to_local_time(forecast, timezone_str)
-    
+
     # plot in ploty
     st.write(f"{country.name} Solar Forecast, capacity of {capacity} GW.")
     fig = go.Figure(data=go.Scatter(
@@ -132,11 +132,11 @@ def country_page() -> None:
         yaxis_title="Power [GW]",
         xaxis_title="Local Time",
         yaxis_range=[0, None],
-        title=f"Solar Forecast for {country.name} (Local Time)"
+        title=f"Solar Forecast for {country.name} (Local Time)",
     )
-    
+
     st.plotly_chart(fig)
-    
+
     # Show forecast data table with local time
     with st.expander("View Forecast Data"):
         st.dataframe(forecast)

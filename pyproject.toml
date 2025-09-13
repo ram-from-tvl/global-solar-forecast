@@ -89,6 +89,7 @@ module = [
     "geopandas",
     "plotly.*",
     "streamlit.*",
+    "timezonefinder",
 ]
 ignore_missing_imports = true
 
