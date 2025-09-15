@@ -17,8 +17,10 @@ data_dir = "src/v1/data"
 def main_page() -> None:
     """Main page, show a map of the world with the solar forecast."""
     st.header("Open Quartz Global Solar Forecast")
-    st.write("This application provides a global forecast of solar power generation for then next 48 hours. " \
-    "We have modelled each countries solar generation seperately, using [open quartz solar](https://open.quartz.solar/), "
+    st.write("This application provides a global forecast of solar power generation "
+    "for then next 48 hours. " \
+    "We have modelled each countries solar generation seperately, " \
+    "using [open quartz solar](https://open.quartz.solar/), "
     "which uses live weather data.")
 
     # Lets load a map of the world
@@ -109,7 +111,8 @@ def main_page() -> None:
 
     # plot in ploty
     st.write(f"Total global solar capacity is {global_solar_capacity:.2f} GW. "
-              "Of course this number is always changing so please see the `Capacities` tab for actual the numbers we have used. ")
+              "Of course this number is always changing so please see the `Capacities` tab "
+              "for actual the numbers we have used. ")
     fig = go.Figure(data=go.Scatter(x=total_forecast["timestamp"],
                                     y=total_forecast["power_gw"],
                                     marker_color="#FF4901"))
@@ -117,7 +120,7 @@ def main_page() -> None:
         yaxis_title="Power [GW]",
         xaxis_title="Time (UTC)",
         yaxis_range=[0, None],
-        title="Global Solar Power Forecast"
+        title="Global Solar Power Forecast",
     )
     st.plotly_chart(fig)
     # now lets make a map plot, of the generation for different forecast
@@ -175,7 +178,7 @@ def main_page() -> None:
     else:
         st.error("No forecast data available for the map")
         return
-    
+
     normalized = st.checkbox(
         "Normalised each countries solar forecast (0-100%)", value=False,
     )
