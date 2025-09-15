@@ -6,6 +6,7 @@ import geopandas as gpd
 import pandas as pd
 import plotly.graph_objects as go
 import pycountry
+import pytz
 import streamlit as st
 from forecast import get_forecast
 
@@ -14,8 +15,6 @@ data_dir = "src/v1/data"
 
 def get_country_timezone(country_name: str) -> str:
     """Get timezone for a country based on its name using pycountry and pytz."""
-    import pytz
-
     # Handle regional/organizational groupings that aren't countries
     non_countries = {
         "Africa", "ASEAN", "Asia", "EU", "Europe", "G20", "G7",
