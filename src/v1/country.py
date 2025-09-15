@@ -8,16 +8,63 @@ import plotly.graph_objects as go
 import pycountry
 import streamlit as st
 from forecast import get_forecast
-from timezonefinder import TimezoneFinder
 
 data_dir = "src/v1/data"
 
 
-def get_country_timezone(lat: float, lon: float) -> str:
-    """Get timezone for a country based on its coordinates."""
-    tf = TimezoneFinder()
-    timezone_str = tf.timezone_at(lat=lat, lng=lon)
-    return timezone_str or "UTC"
+def get_country_timezone(country_name: str) -> str:
+    """Get timezone for a country based on its name using pycountry and pytz."""
+    import pytz
+    
+    # Handle regional/organizational groupings that aren't countries
+    non_countries = {
+        "Africa", "ASEAN", "Asia", "EU", "Europe", "G20", "G7", 
+        "Latin America and Caribbean", "Middle East", "North America", 
+        "Oceania", "OECD", "World"
+    }
+    if country_name in non_countries:
+        return "UTC"
+    
+    try:
+        name_mappings = {
+            "United States of America": "United States",
+            "Russian Federation (the)": "Russian Federation",
+            "Philippines (the)": "Philippines",
+            "Dominican Republic (the)": "Dominican Republic",
+            "Iran (Islamic Republic of)": "Iran",
+            "Czechia": "Czech Republic",
+            "Bosnia Herzegovina": "Bosnia and Herzegovina",
+            "Viet Nam": "Vietnam",
+            "Dem. Rep. Congo": "Congo, The Democratic Republic of the",
+        }
+        
+        lookup_name = name_mappings.get(country_name, country_name)
+        country = pycountry.countries.lookup(lookup_name)
+        
+        country_timezones = pytz.country_timezones.get(country.alpha_2, [])
+        
+        if country_timezones:
+            preferred_timezones = {
+                'US': 'America/New_York',      # Eastern Time (most populated)
+                'RU': 'Europe/Moscow',         # Moscow Time 
+                'AU': 'Australia/Sydney',      # Eastern Australia
+                'BR': 'America/Sao_Paulo',    # Brasília Time (most populated)
+                'CA': 'America/Toronto',       # Eastern Canada
+                'MX': 'America/Mexico_City',   # Central Mexico
+                'AR': 'America/Argentina/Buenos_Aires',  # Argentina
+                'CL': 'America/Santiago',      # Chile
+                'KZ': 'Asia/Almaty',          # Kazakhstan
+                'MN': 'Asia/Ulaanbaatar',     # Mongolia
+                'CD': 'Africa/Kinshasa',      # DRC
+                'ID': 'Asia/Jakarta',         # Indonesia
+            }
+            
+            return preferred_timezones.get(country.alpha_2, country_timezones[0])
+        else:
+            return "UTC"
+            
+    except (LookupError, AttributeError):
+        return "UTC"
 
 
 def convert_utc_to_local_time(forecast_df: pd.DataFrame, timezone_str: str) -> pd.DataFrame:
@@ -104,8 +151,8 @@ def country_page() -> None:
     lat = centroid.y.values[0]
     lon = centroid.x.values[0]
 
-    # Get timezone for this country
-    timezone_str = get_country_timezone(lat, lon)
+    # Get timezone for this country using robust country-name approach
+    timezone_str = get_country_timezone(country.name)
     st.info(f" Displaying forecast in {country.name} local time (Timezone: {timezone_str})")
 
     capacity = solar_capacity_per_country[country.alpha_3]
