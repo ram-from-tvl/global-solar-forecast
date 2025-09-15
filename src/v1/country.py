@@ -15,16 +15,16 @@ data_dir = "src/v1/data"
 def get_country_timezone(country_name: str) -> str:
     """Get timezone for a country based on its name using pycountry and pytz."""
     import pytz
-    
+
     # Handle regional/organizational groupings that aren't countries
     non_countries = {
-        "Africa", "ASEAN", "Asia", "EU", "Europe", "G20", "G7", 
-        "Latin America and Caribbean", "Middle East", "North America", 
-        "Oceania", "OECD", "World"
+        "Africa", "ASEAN", "Asia", "EU", "Europe", "G20", "G7",
+        "Latin America and Caribbean", "Middle East", "North America",
+        "Oceania", "OECD", "World",
     }
     if country_name in non_countries:
         return "UTC"
-    
+
     try:
         name_mappings = {
             "United States of America": "United States",
@@ -37,32 +37,32 @@ def get_country_timezone(country_name: str) -> str:
             "Viet Nam": "Vietnam",
             "Dem. Rep. Congo": "Congo, The Democratic Republic of the",
         }
-        
+
         lookup_name = name_mappings.get(country_name, country_name)
         country = pycountry.countries.lookup(lookup_name)
-        
+
         country_timezones = pytz.country_timezones.get(country.alpha_2, [])
-        
+
         if country_timezones:
             preferred_timezones = {
-                'US': 'America/New_York',      # Eastern Time (most populated)
-                'RU': 'Europe/Moscow',         # Moscow Time 
-                'AU': 'Australia/Sydney',      # Eastern Australia
-                'BR': 'America/Sao_Paulo',    # Brasília Time (most populated)
-                'CA': 'America/Toronto',       # Eastern Canada
-                'MX': 'America/Mexico_City',   # Central Mexico
-                'AR': 'America/Argentina/Buenos_Aires',  # Argentina
-                'CL': 'America/Santiago',      # Chile
-                'KZ': 'Asia/Almaty',          # Kazakhstan
-                'MN': 'Asia/Ulaanbaatar',     # Mongolia
-                'CD': 'Africa/Kinshasa',      # DRC
-                'ID': 'Asia/Jakarta',         # Indonesia
+                "US": "America/New_York",      # Eastern Time (most populated)
+                "RU": "Europe/Moscow",         # Moscow Time
+                "AU": "Australia/Sydney",      # Eastern Australia
+                "BR": "America/Sao_Paulo",    # Brasília Time (most populated)
+                "CA": "America/Toronto",       # Eastern Canada
+                "MX": "America/Mexico_City",   # Central Mexico
+                "AR": "America/Argentina/Buenos_Aires",  # Argentina
+                "CL": "America/Santiago",      # Chile
+                "KZ": "Asia/Almaty",          # Kazakhstan
+                "MN": "Asia/Ulaanbaatar",     # Mongolia
+                "CD": "Africa/Kinshasa",      # DRC
+                "ID": "Asia/Jakarta",         # Indonesia
             }
-            
+
             return preferred_timezones.get(country.alpha_2, country_timezones[0])
         else:
             return "UTC"
-            
+
     except (LookupError, AttributeError):
         return "UTC"
 
