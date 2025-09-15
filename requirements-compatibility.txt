@@ -1,9 +1,0 @@
-# Compatible versions that fix the H3/timezonefinder AttributeError
-# 
-# Issue: timezonefinder 8.0.0+ requires h3>4 but uses the old API h3.geo_to_h3()
-# which was renamed to h3.latlng_to_cell() in H3 4.x, causing AttributeError
-#
-# Solution: Use timezonefinder<8.0.0 with h3<4.0.0 for API compatibility
-
-timezonefinder>=6.0.0,<8.0.0
-h3>=3.7.0,<4.0.0
