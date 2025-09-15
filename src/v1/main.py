@@ -16,7 +16,12 @@ data_dir = "src/v1/data"
 
 def main_page() -> None:
     """Main page, show a map of the world with the solar forecast."""
-    st.header("Global Solar Forecast")
+    st.header("Open Quartz Global Solar Forecast")
+    st.write("This application provides a global forecast of solar power generation "
+    "for then next 48 hours. " \
+    "We have modelled each countries solar generation seperately, " \
+    "using [open quartz solar](https://open.quartz.solar/), "
+    "which uses live weather data.")
 
     # Lets load a map of the world
     world = gpd.read_file(f"{data_dir}/countries.geojson")
@@ -43,9 +48,7 @@ def main_page() -> None:
     global_solar_capacity = solar_capacity_per_country_df["capacity_gw"].sum()
 
     # drop down menu in side bar
-    normalized = st.checkbox(
-        "Normalised each countries solar forecast (0-100%)", value=False,
-    )
+
 
     # run forecast for that countries
     forecast_per_country: dict[str, pd.DataFrame] = {}
@@ -82,8 +85,7 @@ def main_page() -> None:
             forecast = forecast.rename(columns={"power_kw": "power_gw"})
 
             # display normalized forecast
-            if normalized:
-                forecast["power_gw"] = forecast["power_gw"] / capacity * 100
+            forecast["power_percentage"] = forecast["power_gw"] / capacity * 100
 
             forecast_per_country[country.alpha_3] = forecast
 
@@ -108,7 +110,9 @@ def main_page() -> None:
     total_forecast = total_forecast.groupby(["timestamp"]).sum().reset_index()
 
     # plot in ploty
-    st.write(f"Global forecast, capacity of {global_solar_capacity:.2f} GW.")
+    st.write(f"Total global solar capacity is {global_solar_capacity:.2f} GW. "
+              "Of course this number is always changing so please see the `Capacities` tab "
+              "for actual the numbers we have used. ")
     fig = go.Figure(data=go.Scatter(x=total_forecast["timestamp"],
                                     y=total_forecast["power_gw"],
                                     marker_color="#FF4901"))
@@ -116,9 +120,9 @@ def main_page() -> None:
         yaxis_title="Power [GW]",
         xaxis_title="Time (UTC)",
         yaxis_range=[0, None],
+        title="Global Solar Power Forecast",
     )
-    if not normalized:
-        st.plotly_chart(fig)
+    st.plotly_chart(fig)
     # now lets make a map plot, of the generation for different forecast
     # horizons
     # get available timestamps for the slider
@@ -170,10 +174,14 @@ def main_page() -> None:
         selected_generation = all_forecasts_df[
             all_forecasts_df["timestamp"] == selected_timestamp
         ]
-        selected_generation = selected_generation[["country_code", "power_gw"]]
+        selected_generation = selected_generation[["country_code", "power_gw", "power_percentage"]]
     else:
         st.error("No forecast data available for the map")
         return
+
+    normalized = st.checkbox(
+        "Normalised each countries solar forecast (0-100%)", value=False,
+    )
 
     # join 'world' and 'selected_generation'
     world = world.merge(
@@ -188,7 +196,7 @@ def main_page() -> None:
     fig = go.Figure(data=go.Choroplethmap(
         geojson=shapes_dict,
         locations=world.index,
-        z=world["power_gw"],
+        z=world["power_percentage" if normalized else "power_gw"],
         colorscale="Viridis",
         colorbar_title="Power [%]" if normalized else "Power [GW]",
         marker_opacity=0.5,
