@@ -16,7 +16,8 @@ data_dir = "src/v1/data"
 
 def main_page() -> None:
     """Main page, show a map of the world with the solar forecast."""
-    st.header("Open Quartz Global Solar Forecast")
+    st.header("Global Solar Forecast")
+    
     st.write("This application provides a global forecast of solar power generation "
     "for then next 48 hours. " \
     "We have modelled each countries solar generation seperately, " \
@@ -301,6 +302,120 @@ def capacities_page() -> None:
 
 
 if __name__ == "__main__":
+    # Add OCF logo to the menu bar with hyperlink
+    logo_path = "src/assets/ocf_logo_dark_square.png"
+    if Path(logo_path).exists():
+        st.logo(
+            image=logo_path,
+            link="https://github.com/openclimatefix",
+            icon_image=logo_path,
+        )
+        
+        # Improved CSS styling for better logo visibility in both light and dark modes
+        st.markdown(
+            """
+            <style>
+                /* Force logo container to be larger */
+                [data-testid="stLogo"] {
+                    height: 120px !important;
+                    width: 120px !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    margin: 15px !important;
+                    overflow: visible !important;
+                }
+                
+                /* Force logo image to be much larger */
+                [data-testid="stLogo"] img {
+                    height: 100px !important;
+                    width: 100px !important;
+                    min-height: 100px !important;
+                    min-width: 100px !important;
+                    max-height: none !important;
+                    max-width: none !important;
+                    object-fit: contain !important;
+                    border-radius: 12px !important;
+                    transition: all 0.3s ease !important;
+                    transform: scale(1) !important;
+                }
+                
+                /* Alternative approach - use transform scale if size properties don't work */
+                [data-testid="stLogo"] img {
+                    transform: scale(1.8) !important;
+                    transform-origin: center !important;
+                }
+                
+                /* Logo hover effect */
+                [data-testid="stLogo"] img:hover {
+                    transform: scale(1.9) !important;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+                }
+                
+                /* Header container styling */
+                [data-testid="stHeader"] {
+                    height: auto !important;
+                    min-height: 150px !important;
+                    background: transparent !important;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+                    padding: 20px 0 !important;
+                    overflow: visible !important;
+                }
+                
+                /* Dark mode adjustments */
+                @media (prefers-color-scheme: dark) {
+                    [data-testid="stHeader"] {
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                    }
+                    
+                    [data-testid="stLogo"] img:hover {
+                        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15) !important;
+                    }
+                }
+                
+                /* Ensure logo is visible in Streamlit's dark theme */
+                .stApp[data-theme="dark"] [data-testid="stHeader"] {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                }
+                
+                .stApp[data-theme="dark"] [data-testid="stLogo"] img:hover {
+                    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15) !important;
+                }
+                
+                /* Force visibility and prevent hiding */
+                [data-testid="stLogo"] {
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    z-index: 999 !important;
+                    position: relative !important;
+                }
+                
+                /* Override any Streamlit restrictions */
+                [data-testid="stLogo"] * {
+                    max-height: none !important;
+                    max-width: none !important;
+                }
+                
+                /* Responsive adjustments for smaller screens */
+                @media (max-width: 768px) {
+                    [data-testid="stLogo"] img {
+                        transform: scale(1.5) !important;
+                    }
+                    
+                    [data-testid="stLogo"] img:hover {
+                        transform: scale(1.6) !important;
+                    }
+                    
+                    [data-testid="stHeader"] {
+                        min-height: 120px !important;
+                        padding: 15px 0 !important;
+                    }
+                }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+    
     country_page_ref = st.Page(country_page, title="Country")
 
     pg = st.navigation([
