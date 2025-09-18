@@ -200,7 +200,7 @@ def main_page() -> None:
         colorscale="Viridis",
         colorbar_title="Power [%]" if normalized else "Power [GW]",
         marker_opacity=0.5,
-        hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>",
+        hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} %<extra></extra>",
         customdata=world["country_name"] if "country_name" in world.columns else world["adm0_a3"],
     ))
 
