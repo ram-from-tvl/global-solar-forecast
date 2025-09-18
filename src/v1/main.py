@@ -199,9 +199,16 @@ def main_page() -> None:
         z=world["power_percentage" if normalized else "power_gw"],
         colorscale="Viridis",
         colorbar_title="Power [%]" if normalized else "Power [GW]",
-        marker_opacity=0.5,
-        hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>",
-        customdata=world["country_name"] if "country_name" in world.columns else world["adm0_a3"],
+            marker_opacity=0.5,
+            hovertemplate=(
+                "<b>%{customdata}</b><br>Power: %{z:.2f} %<extra></extra>"
+                if normalized
+                else "<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>"
+            ),
+            customdata=(
+                world["country_name"] if "country_name" in world.columns
+                else world["adm0_a3"]
+            ),
     ))
 
     fig.update_layout(
