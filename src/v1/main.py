@@ -29,7 +29,7 @@ def main_page() -> None:
                 f'<img src="data:image/png;base64,{get_image_base64(logo_path)}" '
                 f'style="width: 100%; height: auto; display: block;" />'
                 f'</a>',
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
             )
 
     st.write(
@@ -267,7 +267,7 @@ def docs_page() -> None:
 
     st.markdown("## Caveats")
     st.write(
-        "1. The solar capacities are yearly totals, so they do not account for new installations."
+        "1. The solar capacities are yearly totals, so they do not account for new installations.",
     )
     st.write("2. Some countries solar capacities are very well known, some are not.")
     st.write("3. The Quartz Open Solar API uses a ML model trained on UK solar data.")
