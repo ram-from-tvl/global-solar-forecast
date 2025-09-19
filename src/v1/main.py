@@ -212,6 +212,7 @@ def main_page() -> None:
         ),
     )
 
+
     fig.update_layout(
         mapbox_style="carto-positron",
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
