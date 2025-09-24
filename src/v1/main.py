@@ -36,7 +36,7 @@ def main_page() -> None:
         "This application provides a global forecast of solar power generation "
         "for then next 48 hours. "
         "We have modelled each countries solar generation seperately, "
-        "using [open quartz solar](https://open.quartz.solar/), "
+        "using [open quartz solar](https://open.quartz.solar/docs), "
         "which uses live weather data.",
     )
 
