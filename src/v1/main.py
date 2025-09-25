@@ -209,7 +209,6 @@ def main_page() -> None:
             yaxis_title="Power [GW]",
             xaxis_title="Time (UTC)",
             yaxis_range=[0, None],
-            title="Stacked Global Solar Power Forecast (top 20 + Other)",
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         )
         st.plotly_chart(fig)
