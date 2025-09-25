@@ -110,7 +110,6 @@ def main_page() -> None:
                 # unexpected format; skip this country
                 continue
 
-            # protect against division by zero
             if capacity == 0.0:
                 forecast["power_percentage"] = None
             else:
