@@ -9,6 +9,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import pycountry
 import streamlit as st
+from constants import ocf_palette
 from country import country_page
 from forecast import get_forecast
 
@@ -91,6 +92,8 @@ def main_page() -> None:
         lon = centroid.x.values[0]
 
         capacity = solar_capacity_per_country[country.alpha_3]
+        if capacity == 0.0:
+            continue
         forecast_data = get_forecast(country.name, capacity, lat, lon)
 
         if forecast_data is not None:
@@ -174,26 +177,6 @@ def main_page() -> None:
         stacked_df = pivot[top_countries].copy()
         if other_countries:
             stacked_df["Other"] = pivot[other_countries].sum(axis=1)
-
-        # OCF colours (palette) - repeat if necessary
-        ocf_palette = [
-            "#003f5c",
-            "#2f4b7c",
-            "#665191",
-            "#a05195",
-            "#d45087",
-            "#f95d6a",
-            "#ff7c43",
-            "#ffa600",
-            "#2ca02c",
-            "#1f77b4",
-            "#9467bd",
-            "#8c564b",
-            "#e377c2",
-            "#7f7f7f",
-            "#bcbd22",
-            "#17becf",
-        ]
 
         fig = go.Figure()
         cols = list(stacked_df.columns)  # type: ignore[arg-type]
