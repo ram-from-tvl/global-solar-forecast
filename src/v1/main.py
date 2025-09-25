@@ -9,8 +9,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import pycountry
 import streamlit as st
-from constants import ocf_palette
 from country import country_page
+from constants import ocf_palette
 from forecast import get_forecast
 
 data_dir = "src/v1/data"
@@ -111,10 +111,10 @@ def main_page() -> None:
                 continue
 
             # protect against division by zero
-            try:
-                forecast["power_percentage"] = forecast["power_gw"] / float(capacity) * 100
-            except Exception:
+            if capacity == 0.0:
                 forecast["power_percentage"] = None
+            else:
+                forecast["power_percentage"] = forecast["power_gw"] / float(capacity) * 100
 
             forecast_per_country[country.alpha_3] = forecast
 
