@@ -8,7 +8,7 @@ from scipy.signal import savgol_filter
 data_dir = "src/v1/data"
 
 
-@st.cache_data
+@st.cache_data(ttl="1h")
 def get_forecast(
     name: str,
     capacity: float,
