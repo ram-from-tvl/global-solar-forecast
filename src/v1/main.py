@@ -9,8 +9,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import pycountry
 import streamlit as st
-from country import country_page
 from constants import ocf_palette
+from country import country_page
 from forecast import get_forecast
 
 data_dir = "src/v1/data"
