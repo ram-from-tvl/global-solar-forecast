@@ -28,7 +28,7 @@ def main_page() -> None:
                 f'<a href="https://www.openclimatefix.org" target="_blank">'
                 f'<img src="data:image/png;base64,{get_image_base64(logo_path)}" '
                 f'style="width: 100%; height: auto; display: block;" />'
-                f'</a>',
+                f"</a>",
                 unsafe_allow_html=True,
             )
 
@@ -144,7 +144,9 @@ def main_page() -> None:
     if not show_stacked:
         fig = go.Figure(
             data=go.Scatter(
-                x=total_forecast["timestamp"], y=total_forecast["power_gw"], marker_color="#FF4901",
+                x=total_forecast["timestamp"],
+                y=total_forecast["power_gw"],
+                marker_color="#FF4901",
             ),
         )
         fig.update_layout(
@@ -157,7 +159,10 @@ def main_page() -> None:
     else:
         # Prepare stacked data: pivot per country
         pivot = all_forecasts_df.pivot_table(
-            index="timestamp", columns="country_code", values="power_gw", aggfunc="sum"
+            index="timestamp",
+            columns="country_code",
+            values="power_gw",
+            aggfunc="sum",
         ).fillna(0)
 
         # pick top N countries by peak contribution
@@ -191,7 +196,7 @@ def main_page() -> None:
         ]
 
         fig = go.Figure()
-        cols = list(stacked_df.columns)
+        cols = list(stacked_df.columns)  # type: ignore[arg-type]
         for i, col in enumerate(cols):
             color = ocf_palette[i % len(ocf_palette)]
             fig.add_trace(
@@ -201,15 +206,15 @@ def main_page() -> None:
                     mode="lines",
                     name=col,
                     stackgroup="one",
-                    line=dict(width=0.5, color=color),
-                )
+                    line={"width": 0.5, "color": color},
+                ),
             )
 
         fig.update_layout(
             yaxis_title="Power [GW]",
             xaxis_title="Time (UTC)",
             yaxis_range=[0, None],
-            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+            legend={"orientation": "h", "yanchor": "bottom", "y": 1.02, "xanchor": "right", "x": 1},
         )
         st.plotly_chart(fig)
 
@@ -251,12 +256,8 @@ def main_page() -> None:
             f"{selected_timestamp.strftime('%Y-%m-%d %H:%M')} UTC",
         )
 
-        selected_generation = all_forecasts_df[
-            all_forecasts_df["timestamp"] == selected_timestamp
-        ]
-        selected_generation = selected_generation[
-            ["country_code", "power_gw", "power_percentage"]
-        ]
+        selected_generation = all_forecasts_df[all_forecasts_df["timestamp"] == selected_timestamp]
+        selected_generation = selected_generation[["country_code", "power_gw", "power_percentage"]]
     else:
         st.error("No forecast data available for the map")
         return
@@ -290,7 +291,6 @@ def main_page() -> None:
         ),
     )
 
-
     fig.update_layout(
         mapbox_style="carto-positron",
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
@@ -316,6 +316,7 @@ def main_page() -> None:
 def get_image_base64(image_path: str) -> str:
     """Convert image to base64 string for embedding in HTML."""
     import base64
+
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
