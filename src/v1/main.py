@@ -37,7 +37,7 @@ def main_page() -> None:
         "This application provides a global forecast of solar power generation "
         "for then next 48 hours. "
         "We have modelled each countries solar generation seperately, "
-        "using [open quartz solar](https://open.quartz.solar/), "
+        "using [open quartz solar](https://open.quartz.solar/docs), "
         "which uses live weather data.",
     )
 
@@ -139,7 +139,6 @@ def main_page() -> None:
         "Of course this number is always changing so please see the `Capacities` tab "
         "for actual the numbers we have used. ",
     )
-
     # Toggle to show stacked chart (top N countries + Other)
     show_stacked = st.checkbox("Show stacked global chart (top 20 countries)", value=False)
 

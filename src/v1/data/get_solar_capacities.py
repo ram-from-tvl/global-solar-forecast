@@ -64,6 +64,136 @@ manual_countries = {
             "Wikipedia (Ember 2024 data) - https://en.wikipedia.org/wiki/Solar_power_by_country"
         ),
     },
+    "BEN": {
+        "country_name": "Benin",
+        "capacity_gw": 0.13,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "BFA": {
+        "country_name": "Burkina Faso",
+        "capacity_gw": 0.09,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "BDI": {
+        "country_name": "Burundi",
+        "capacity_gw": 0.017,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "CMR": {
+        "country_name": "Cameroon",
+        "capacity_gw": 0.09,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
+    "CPV": {
+        "country_name": "Cape Verde",
+        "capacity_gw": 0.03,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "CAF": {
+        "country_name": "Central African Republic",
+        "capacity_gw": 0.01,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
+    "COM": {
+        "country_name": "Comoros",
+        "capacity_gw": 0.005,
+        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+    },
+    "DJI": {
+        "country_name": "Djibouti",
+        "capacity_gw": 0.02,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "ERI": {
+        "country_name": "Eritrea",
+        "capacity_gw": 0.01,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
+    "SWZ": {
+        "country_name": "Eswatini",
+        "capacity_gw": 0.03,
+        "source": "https://www.globalsolarcouncil.org/news/global-solar-council-africas-solar-market-set-to-surge-42-in-2025-but-finance-bottlenecks-threaten-growth/",
+    },
+    "GAB": {
+        "country_name": "Gabon",
+        "capacity_gw": 0.01,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
+    "GMB": {
+        "country_name": "Gambia",
+        "capacity_gw": 0.03,
+        "source": "https://www.pv-magazine.com/2023/02/10/gambia-inaugurates-23-mw-pv-plant/",
+    },
+    "GNQ": {
+        "country_name": "Equatorial Guinea",
+        "capacity_gw": 0.005,
+        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+    },
+    "GIN": {
+        "country_name": "Guinea",
+        "capacity_gw": 0.01,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "GNB": {
+        "country_name": "Guinea-Bissau",
+        "capacity_gw": 0.005,
+        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+    },
+    "CIV": {
+        "country_name": "Ivory Coast",
+        "capacity_gw": 0.05,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "LES": {
+        "country_name": "Lesotho",
+        "capacity_gw": 0.005,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "LSO": {
+        "country_name": "Lesotho",
+        "capacity_gw": 0.005,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "MRT": {
+        "country_name": "Mauritania",
+        "capacity_gw": 0.04,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "MWI": {
+        "country_name": "Malawi",
+        "capacity_gw": 0.03,
+        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+    },
+    "STP": {
+        "country_name": "Sao Tome and Principe",
+        "capacity_gw": 0.005,
+        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+    },
+    "SLE": {
+        "country_name": "Sierra Leone",
+        "capacity_gw": 0.02,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
+    "SOM": {
+        "country_name": "Somalia",
+        "capacity_gw": 0.02,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
+    "SSD": {
+        "country_name": "South Sudan",
+        "capacity_gw": 0.01,
+        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+    },
+    "SYC": {
+        "country_name": "Seychelles",
+        "capacity_gw": 0.01,
+        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+    },
+    "TCD": {
+        "country_name": "Chad",
+        "capacity_gw": 0.02,
+        "source": "https://ember-energy.org/latest-insights/the-first-evidence-of-a-take-off-in-solar-in-africa/",
+    },
     "ALB": {
         "country_name": "Albania",
         "capacity_gw": 0.21,
@@ -293,6 +423,177 @@ manual_countries = {
         "country_name": "Botswana",
         "capacity_gw": 0.006,
         "source": "www.pv-magazine.com/",
+    },
+    # --- Entries supplied by user on 2025-09-26 ---
+    "ATA": {
+        "country_name": "Antarctica",
+        "capacity_gw": 0.0002,
+        "source": "British Antarctic Survey renewable projects 2025 - https://www.bas.ac.uk/media-post/renewables-milestone-reached-in-antarctica/",
+    },
+    "BHS": {
+        "country_name": "Bahamas",
+        "capacity_gw": 0.002,
+        "source": "IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles",
+    },
+    "BLZ": {
+        "country_name": "Belize",
+        "capacity_gw": 0.002,
+        "source": "IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles",
+    },
+    "BRN": {
+        "country_name": "Brunei",
+        "capacity_gw": 0.005,
+        "source": "IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles",
+    },
+    "FLK": {
+        "country_name": "Falkland Islands",
+        "capacity_gw": 0.0034,
+        "source": "Falkland Islands Energy Strategy & green-overseas.org - https://www.green-overseas.org/en/pays-et-territoires/falkland-islands",
+    },
+    "FJI": {
+        "country_name": "Fiji",
+        "capacity_gw": 0.011,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "ATF": {
+        "country_name": "French Southern and Antarctic Lands",
+        "capacity_gw": 0.0032,
+        "source": "green-overseas.org & TAAF renewable energy installations - http://www.green-overseas.org/en/pays-et-territoires/french-southern-and-antarctic-lands",
+    },
+    "GRL": {
+        "country_name": "Greenland",
+        "capacity_gw": 0.001,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "GUY": {
+        "country_name": "Guyana",
+        "capacity_gw": 0.015,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "HTI": {
+        "country_name": "Haiti",
+        "capacity_gw": 0.004,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "ISL": {
+        "country_name": "Iceland",
+        "capacity_gw": 0.007,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "JAM": {
+        "country_name": "Jamaica",
+        "capacity_gw": 0.11,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "KOS": {
+        "country_name": "Kosovo",
+        "capacity_gw": 0.15,
+        "source": "PVKnowhow 2024 & KfW Development Bank - https://www.pvknowhow.com/news/kosovo-solar-plant-keks-impressive-100-mw-project-begins/",
+    },
+    "LAO": {
+        "country_name": "Laos",
+        "capacity_gw": 0.059,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "LBR": {
+        "country_name": "Liberia",
+        "capacity_gw": 0.003,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "NCL": {
+        "country_name": "New Caledonia",
+        "capacity_gw": 0.185,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "NIC": {
+        "country_name": "Nicaragua",
+        "capacity_gw": 0.018,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "NER": {
+        "country_name": "Niger",
+        "capacity_gw": 0.08,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "PRK": {
+        "country_name": "North Korea",
+        "capacity_gw": 0.129,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "CYN": {
+        "country_name": "Northern Cyprus",
+        "capacity_gw": 0.0013,
+        "source": "Research studies ETASR 2023 & ProLuxMax 2025 - https://etasr.com/index.php/ETASR/article/view/5744",
+    },
+    "PSX": {
+        "country_name": "Palestine",
+        "capacity_gw": 0.192,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "PNG": {
+        "country_name": "Papua New Guinea",
+        "capacity_gw": 0.004,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "PRY": {
+        "country_name": "Paraguay",
+        "capacity_gw": 0.001,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "COG": {
+        "country_name": "Republic of the Congo",
+        "capacity_gw": 0.001,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "SLB": {
+        "country_name": "Solomon Islands",
+        "capacity_gw": 0.004,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "SOL": {
+        "country_name": "Somaliland",
+        "capacity_gw": 0.0337,
+        "source": "Combined projects - https://www.greenbuildingafrica.co.za/somaliland-issues-epc-tender-for-12mw-solar-bess-project-plus-13-5km-33kv-evacuation-line/",
+    },
+    "SDS": {
+        "country_name": "South Sudan",
+        "capacity_gw": 0.046,
+        "source": "Combined sources - https://www.saurenergy.me/south-sudan-launches-first-solar-power-plant-with-bess/",
+    },
+    "SUR": {
+        "country_name": "Suriname",
+        "capacity_gw": 0.012,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "SYR": {
+        "country_name": "Syria",
+        "capacity_gw": 0.06,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "TTO": {
+        "country_name": "Trinidad and Tobago",
+        "capacity_gw": 0.004,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "VUT": {
+        "country_name": "Vanuatu",
+        "capacity_gw": 0.005,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "VEN": {
+        "country_name": "Venezuela",
+        "capacity_gw": 0.005,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "SAH": {
+        "country_name": "Western Sahara",
+        "capacity_gw": 0.1,
+        "source": "WSRW Report 2024 - https://wsrw.org/en/news/renewable-energy",
+    },
+    "HKG": {
+        "country_name": "Hong Kong",
+        "capacity_gw": 0.19,
+        "source": "TheGlobalEconomy (EIA) - https://www.theglobaleconomy.com/Hong-Kong/solar_electricity_capacity/",
     },
 }
 
