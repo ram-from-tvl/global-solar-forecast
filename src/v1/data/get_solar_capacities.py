@@ -38,10 +38,20 @@ manual_countries = {
         "capacity_gw": 1.2,
         "source": ("Wikipedia - https://en.wikipedia.org/wiki/Solar_power_by_country"),
     },
+    "TJK": {
+        "country_name": "Tajikistan",
+        "capacity_gw": 0.0006,
+        "source": "CABAR.asia 2024 (600 kW USAID project) - https://cabar.asia/en/tajikistan-solar-energy-in-support-of-hydropower-plants",
+    },
     "TKM": {
         "country_name": "Turkmenistan",
-        "capacity_gw": 0.0,
-        "source": ("The Global Economy - https://www.theglobaleconomy.com/"),
+        "capacity_gw": 0.005,
+        "source": "UNDP 2012 Report - https://www.undp.org/sites/g/files/zskgke326/files/migration/eurasia/Turkmenistan.pdf",
+    },
+    "TLS": {
+        "country_name": "Timor-Leste",
+        "capacity_gw": 0.0011,
+        "source": "Asian Development Bank sector assessment 2016–2020 - https://www.adb.org/sites/default/files/linked-documents/cps-tim-2016-2020-ssa-05.pdf",
     },
     "DZA": {
         "country_name": "Algeria",
@@ -86,8 +96,8 @@ manual_countries = {
     },
     "CPV": {
         "country_name": "Cape Verde",
-        "capacity_gw": 0.03,
-        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+        "capacity_gw": 0.026,
+        "source": "IRENA 2023 via PV Magazine - https://www.pv-magazine.com/2024/11/14/cape-verde-runs-tender-for-10-mw-of-solar/",
     },
     "CAF": {
         "country_name": "Central African Republic",
@@ -96,8 +106,8 @@ manual_countries = {
     },
     "COM": {
         "country_name": "Comoros",
-        "capacity_gw": 0.005,
-        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+        "capacity_gw": 0.004034,
+        "source": "IRENA 2023 via PVKnowhow - https://www.pvknowhow.com/solar-report/comoros/",
     },
     "DJI": {
         "country_name": "Djibouti",
@@ -146,8 +156,8 @@ manual_countries = {
     },
     "LES": {
         "country_name": "Lesotho",
-        "capacity_gw": 0.005,
-        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+        "capacity_gw": 0.03,
+        "source": "World Bank National Energy Compact 2025 - https://thedocs.worldbank.org/en/doc/038fd851752251bbd12392aa2a6d263c-0010012025/original/Lesotho-National-Energy-Compact-Mission-300.pdf",
     },
     "LSO": {
         "country_name": "Lesotho",
@@ -166,8 +176,8 @@ manual_countries = {
     },
     "STP": {
         "country_name": "Sao Tome and Principe",
-        "capacity_gw": 0.005,
-        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+        "capacity_gw": 0.0036,
+        "source": "World Bank National Energy Compact 2025 - https://thedocs.worldbank.org/en/doc/680a427c0554b887598d86080fdcc775-0010012025/original/Sao-Tome-National-Energy-Compact-Mission-300.pdf",
     },
     "SLE": {
         "country_name": "Sierra Leone",
@@ -181,13 +191,13 @@ manual_countries = {
     },
     "SSD": {
         "country_name": "South Sudan",
-        "capacity_gw": 0.01,
-        "source": "https://www.ren21.net/gsr-2025/downloads/pdf/go/GSR_2025_GO_2025_Full_Report.pdf",
+        "capacity_gw": 0.0384,
+        "source": "Combined: PVKnowhow 2025 (38.4 MW total) - https://www.pvknowhow.com/solar-report/south-sudan/",
     },
     "SYC": {
         "country_name": "Seychelles",
-        "capacity_gw": 0.01,
-        "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
+        "capacity_gw": 0.017,
+        "source": "PVKnowhow 2024 Report - https://www.pvknowhow.com/solar-report/seychelles/",
     },
     "TCD": {
         "country_name": "Chad",
@@ -278,12 +288,15 @@ manual_countries = {
             "Wikipedia (Ember 2024 data) - https://en.wikipedia.org/wiki/Solar_power_by_country"
         ),
     },
+    "MLT": {
+        "country_name": "Malta",
+        "capacity_gw": 0.244,
+        "source": "Malta Regulator for Energy and Water 2024 - https://www.ceer.eu/wp-content/uploads/2024/07/C24_Malta-EN.pdf",
+    },
     "MUS": {
         "country_name": "Mauritius",
-        "capacity_gw": 0.13,
-        "source": (
-            "Wikipedia (Ember 2024 data) - https://en.wikipedia.org/wiki/Solar_power_by_country"
-        ),
+        "capacity_gw": 0.147,
+        "source": "Ministry of Energy Annual Report 2023-2024 - https://publicutilities.govmu.org/Documents/Annual%20Report2023-2024.pdf",
     },
     "NAM": {
         "country_name": "Namibia",
@@ -312,6 +325,11 @@ manual_countries = {
         "source": (
             "Wikipedia (Ember 2024 data) - https://en.wikipedia.org/wiki/Solar_power_by_country"
         ),
+    },
+    "SGP": {
+        "country_name": "Singapore",
+        "capacity_gw": 1.348,
+        "source": "Energy Market Authority Singapore 2024 - https://ema.gov.sg/resources/singapore-energy-statistics/chapter6",
     },
     "TGO": {
         "country_name": "Togo",
@@ -407,10 +425,8 @@ manual_countries = {
     },
     "BHR": {
         "country_name": "Bahrain",
-        "capacity_gw": 0.05,
-        "source": (
-            "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity"
-        ),
+        "capacity_gw": 0.065,
+        "source": "IEA Report 2024 via SAU Energy - https://www.saurenergy.me/emerging-middle-eastern-nations-to-advance-re-goals/",
     },
     "BTN": {
         "country_name": "Bhutan",
@@ -595,6 +611,11 @@ manual_countries = {
         "capacity_gw": 0.19,
         "source": "TheGlobalEconomy (EIA) - https://www.theglobaleconomy.com/Hong-Kong/solar_electricity_capacity/",
     },
+    "XKX": {
+        "country_name": "Kosovo",
+        "capacity_gw": 0.09,
+        "source": "PVKnowhow 2025 Report - https://www.pvknowhow.com/news/kosovo-solar-energy-stunning-2025-advancements-proven/",
+    },
 }
 
 manual_countries_df = pd.DataFrame.from_dict(manual_countries, orient="index")
@@ -602,4 +623,4 @@ manual_countries_df.index.name = "country_code"
 
 df = pd.concat([df, manual_countries_df])
 
-df.to_csv("src/v1/data/solar_capacities.csv")
+df.to_csv("solar_capacities.csv")
