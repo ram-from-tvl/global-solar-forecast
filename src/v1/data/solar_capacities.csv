@@ -40,6 +40,7 @@ DEU,89.94,Germany,Ember
 GRC,9.27,Greece,Ember
 HUN,7.7,Hungary,Ember
 IND,97.38,India,Ember
+IDN,0.82,Indonesia,Ember
 IRN,0.78,Iran (Islamic Republic of),Ember
 IRL,1.34,Ireland,Ember
 ITA,36.01,Italy,Ember
@@ -166,3 +167,37 @@ AFG,0.02,Afghanistan,Our World in Data - https://ourworldindata.org/grapher/inst
 BHR,0.05,Bahrain,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 BTN,0.04,Bhutan,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 BWA,0.006,Botswana,www.pv-magazine.com/
+ATA,0.0002,Antarctica,British Antarctic Survey renewable projects 2025 - https://www.bas.ac.uk/media-post/renewables-milestone-reached-in-antarctica/
+BHS,0.002,Bahamas,IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles
+BLZ,0.002,Belize,IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles
+BRN,0.005,Brunei,IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles
+FLK,0.0034,Falkland Islands,Falkland Islands Energy Strategy & green-overseas.org - https://www.green-overseas.org/en/pays-et-territoires/falkland-islands
+FJI,0.011,Fiji,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+ATF,0.0032,French Southern and Antarctic Lands,green-overseas.org & TAAF renewable energy installations - http://www.green-overseas.org/en/pays-et-territoires/french-southern-and-antarctic-lands
+GRL,0.001,Greenland,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+GUY,0.015,Guyana,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+HTI,0.004,Haiti,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+ISL,0.007,Iceland,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+JAM,0.11,Jamaica,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+KOS,0.15,Kosovo,PVKnowhow 2024 & KfW Development Bank - https://www.pvknowhow.com/news/kosovo-solar-plant-keks-impressive-100-mw-project-begins/
+LAO,0.059,Laos,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+LBR,0.003,Liberia,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+NCL,0.185,New Caledonia,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+NIC,0.018,Nicaragua,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+NER,0.08,Niger,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+PRK,0.129,North Korea,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+CYN,0.0013,Northern Cyprus,Research studies ETASR 2023 & ProLuxMax 2025 - https://etasr.com/index.php/ETASR/article/view/5744
+PSX,0.192,Palestine,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+PNG,0.004,Papua New Guinea,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+PRY,0.001,Paraguay,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+COG,0.001,Republic of the Congo,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+SLB,0.004,Solomon Islands,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+SOL,0.0337,Somaliland,Combined projects - https://www.greenbuildingafrica.co.za/somaliland-issues-epc-tender-for-12mw-solar-bess-project-plus-13-5km-33kv-evacuation-line/
+SDS,0.046,South Sudan,Combined sources - https://www.saurenergy.me/south-sudan-launches-first-solar-power-plant-with-bess/
+SUR,0.012,Suriname,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+SYR,0.06,Syria,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+TTO,0.004,Trinidad and Tobago,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+VUT,0.005,Vanuatu,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+VEN,0.005,Venezuela,World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country
+SAH,0.1,Western Sahara,WSRW Report 2024 - https://wsrw.org/en/news/renewable-energy
+HKG,0.19,Hong Kong,TheGlobalEconomy (EIA) - https://www.theglobaleconomy.com/Hong-Kong/solar_electricity_capacity/
