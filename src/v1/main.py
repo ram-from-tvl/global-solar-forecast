@@ -28,7 +28,7 @@ def main_page() -> None:
                 f'<a href="https://www.openclimatefix.org" target="_blank">'
                 f'<img src="data:image/png;base64,{get_image_base64(logo_path)}" '
                 f'style="width: 100%; height: auto; display: block;" />'
-                f'</a>',
+                f"</a>",
                 unsafe_allow_html=True,
             )
 
@@ -123,7 +123,9 @@ def main_page() -> None:
     )
     fig = go.Figure(
         data=go.Scatter(
-            x=total_forecast["timestamp"], y=total_forecast["power_gw"], marker_color="#FF4901",
+            x=total_forecast["timestamp"],
+            y=total_forecast["power_gw"],
+            marker_color="#FF4901",
         ),
     )
     fig.update_layout(
@@ -172,12 +174,8 @@ def main_page() -> None:
             f"{selected_timestamp.strftime('%Y-%m-%d %H:%M')} UTC",
         )
 
-        selected_generation = all_forecasts_df[
-            all_forecasts_df["timestamp"] == selected_timestamp
-        ]
-        selected_generation = selected_generation[
-            ["country_code", "power_gw", "power_percentage"]
-        ]
+        selected_generation = all_forecasts_df[all_forecasts_df["timestamp"] == selected_timestamp]
+        selected_generation = selected_generation[["country_code", "power_gw", "power_percentage"]]
     else:
         st.error("No forecast data available for the map")
         return
@@ -211,7 +209,6 @@ def main_page() -> None:
         ),
     )
 
-
     fig.update_layout(
         mapbox_style="carto-positron",
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
@@ -237,6 +234,7 @@ def main_page() -> None:
 def get_image_base64(image_path: str) -> str:
     """Convert image to base64 string for embedding in HTML."""
     import base64
+
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
