@@ -51,7 +51,7 @@ manual_countries = {
     "TLS": {
         "country_name": "Timor-Leste",
         "capacity_gw": 0.0011,
-        "source": "Asian Development Bank sector assessment 2016–2020 - https://www.adb.org/sites/default/files/linked-documents/cps-tim-2016-2020-ssa-05.pdf",
+        "source": "Asian Development Bank sector assessment 2016-2020 - https://www.adb.org/sites/default/files/linked-documents/cps-tim-2016-2020-ssa-05.pdf",
     },
     "DZA": {
         "country_name": "Algeria",
