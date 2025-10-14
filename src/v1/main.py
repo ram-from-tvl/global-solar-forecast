@@ -377,8 +377,9 @@ if __name__ == "__main__":
         [
             st.Page(main_page, title="Global", default=True),
             country_page_ref,
-            st.Page(docs_page, title="About"),
             st.Page(capacities_page, title="Capacities"),
+            st.Page(docs_page, title="About"),
+
         ],
         position="top",
     )
