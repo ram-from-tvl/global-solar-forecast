@@ -105,7 +105,7 @@ def main_page() -> None:
 
             # Convert units explicitly: API returns kW (power_kw) -> convert to GW
             if "power_kw" in forecast.columns:
-                # No scaling needed since capacity is in GW and API returns kW
+                # we dont need to scale the values as the we provide the capacity in GW (it should be in kw)
                 forecast["power_gw"] = forecast["power_kw"].astype(float)
             elif "power_gw" not in forecast.columns:
                 # unexpected format; skip this country
