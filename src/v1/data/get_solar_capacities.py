@@ -154,11 +154,6 @@ manual_countries = {
         "capacity_gw": 0.05,
         "source": "https://ember-energy.org/latest-insights/global-electricity-review-2025/",
     },
-    "LES": {
-        "country_name": "Lesotho",
-        "capacity_gw": 0.03,
-        "source": "World Bank National Energy Compact 2025 - https://thedocs.worldbank.org/en/doc/038fd851752251bbd12392aa2a6d263c-0010012025/original/Lesotho-National-Energy-Compact-Mission-300.pdf",
-    },
     "LSO": {
         "country_name": "Lesotho",
         "capacity_gw": 0.005,
@@ -212,7 +207,7 @@ manual_countries = {
         ),
     },
     "COD": {
-        "country_name": "Dem. Rep. Congo",
+        "country_name": "Democratic Republic of Congo",
         "capacity_gw": 0.03,
         "source": (
             "Wikipedia (Ember 2024 data) - https://en.wikipedia.org/wiki/Solar_power_by_country"
@@ -287,11 +282,6 @@ manual_countries = {
         "source": (
             "Wikipedia (Ember 2024 data) - https://en.wikipedia.org/wiki/Solar_power_by_country"
         ),
-    },
-    "MLT": {
-        "country_name": "Malta",
-        "capacity_gw": 0.244,
-        "source": "Malta Regulator for Energy and Water 2024 - https://www.ceer.eu/wp-content/uploads/2024/07/C24_Malta-EN.pdf",
     },
     "MUS": {
         "country_name": "Mauritius",
@@ -435,186 +425,295 @@ manual_countries = {
             "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity"
         ),
     },
+
+    # ----------------------- Other small countries from "Our World in Data" ----------------------
+    # These countries have very small solar capacities but are not present in the Ember dataset
+    # but have reliable sources from "Our World in Data"
+
+    # ---------------- Africa ----------------
     "BWA": {
         "country_name": "Botswana",
         "capacity_gw": 0.006,
         "source": "www.pv-magazine.com/",
     },
-    # --- Entries supplied by user on 2025-09-26 ---
-    "ATA": {
-        "country_name": "Antarctica",
-        "capacity_gw": 0.0002,
-        "source": "British Antarctic Survey renewable projects 2025 - https://www.bas.ac.uk/media-post/renewables-milestone-reached-in-antarctica/",
-    },
-    "BHS": {
-        "country_name": "Bahamas",
-        "capacity_gw": 0.002,
-        "source": "IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles",
-    },
-    "BLZ": {
-        "country_name": "Belize",
-        "capacity_gw": 0.002,
-        "source": "IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles",
-    },
-    "BRN": {
-        "country_name": "Brunei",
-        "capacity_gw": 0.005,
-        "source": "IRENA Country Profile 2024 - https://www.irena.org/Data/Energy-Profiles",
-    },
-    "FLK": {
-        "country_name": "Falkland Islands",
-        "capacity_gw": 0.0034,
-        "source": "Falkland Islands Energy Strategy & green-overseas.org - https://www.green-overseas.org/en/pays-et-territoires/falkland-islands",
-    },
-    "FJI": {
-        "country_name": "Fiji",
-        "capacity_gw": 0.011,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "ATF": {
-        "country_name": "French Southern and Antarctic Lands",
-        "capacity_gw": 0.0032,
-        "source": "green-overseas.org & TAAF renewable energy installations - http://www.green-overseas.org/en/pays-et-territoires/french-southern-and-antarctic-lands",
-    },
-    "GRL": {
-        "country_name": "Greenland",
-        "capacity_gw": 0.001,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "GUY": {
-        "country_name": "Guyana",
-        "capacity_gw": 0.015,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "HTI": {
-        "country_name": "Haiti",
-        "capacity_gw": 0.004,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "ISL": {
-        "country_name": "Iceland",
-        "capacity_gw": 0.007,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "JAM": {
-        "country_name": "Jamaica",
-        "capacity_gw": 0.11,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "KOS": {
-        "country_name": "Kosovo",
-        "capacity_gw": 0.15,
-        "source": "PVKnowhow 2024 & KfW Development Bank - https://www.pvknowhow.com/news/kosovo-solar-plant-keks-impressive-100-mw-project-begins/",
-    },
-    "LAO": {
-        "country_name": "Laos",
-        "capacity_gw": 0.059,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "LBR": {
-        "country_name": "Liberia",
-        "capacity_gw": 0.003,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "NCL": {
-        "country_name": "New Caledonia",
-        "capacity_gw": 0.185,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "NIC": {
-        "country_name": "Nicaragua",
-        "capacity_gw": 0.018,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    "COG": {
+        "country_name": "Congo",
+        "capacity_gw": 0.0007,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
     },
     "NER": {
         "country_name": "Niger",
         "capacity_gw": 0.08,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
     },
-    "PRK": {
-        "country_name": "North Korea",
-        "capacity_gw": 0.129,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "CYN": {
-        "country_name": "Northern Cyprus",
-        "capacity_gw": 0.0013,
-        "source": "Research studies ETASR 2023 & ProLuxMax 2025 - https://etasr.com/index.php/ETASR/article/view/5744",
-    },
-    "PSX": {
-        "country_name": "Palestine",
-        "capacity_gw": 0.192,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "PNG": {
-        "country_name": "Papua New Guinea",
-        "capacity_gw": 0.004,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "PRY": {
-        "country_name": "Paraguay",
-        "capacity_gw": 0.001,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "COG": {
-        "country_name": "Republic of the Congo",
-        "capacity_gw": 0.001,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "SLB": {
-        "country_name": "Solomon Islands",
-        "capacity_gw": 0.004,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "SOL": {
-        "country_name": "Somaliland",
-        "capacity_gw": 0.0337,
-        "source": "Combined projects - https://www.greenbuildingafrica.co.za/somaliland-issues-epc-tender-for-12mw-solar-bess-project-plus-13-5km-33kv-evacuation-line/",
-    },
-    "SDS": {
-        "country_name": "South Sudan",
-        "capacity_gw": 0.046,
-        "source": "Combined sources - https://www.saurenergy.me/south-sudan-launches-first-solar-power-plant-with-bess/",
-    },
-    "SUR": {
-        "country_name": "Suriname",
-        "capacity_gw": 0.012,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "SYR": {
-        "country_name": "Syria",
-        "capacity_gw": 0.06,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "TTO": {
-        "country_name": "Trinidad and Tobago",
-        "capacity_gw": 0.004,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "VUT": {
-        "country_name": "Vanuatu",
-        "capacity_gw": 0.005,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
-    },
-    "VEN": {
-        "country_name": "Venezuela",
-        "capacity_gw": 0.005,
-        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    "LBR": {
+        "country_name": "Liberia",
+        "capacity_gw": 0.003,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
     },
     "SAH": {
         "country_name": "Western Sahara",
         "capacity_gw": 0.1,
         "source": "WSRW Report 2024 - https://wsrw.org/en/news/renewable-energy",
     },
+
+    # ---------------- Asia ----------------
     "HKG": {
         "country_name": "Hong Kong",
-        "capacity_gw": 0.19,
-        "source": "TheGlobalEconomy (EIA) - https://www.theglobaleconomy.com/Hong-Kong/solar_electricity_capacity/",
+        "capacity_gw": 0.33,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
     },
-    "XKX": {
-        "country_name": "Kosovo",
-        "capacity_gw": 0.09,
-        "source": "PVKnowhow 2025 Report - https://www.pvknowhow.com/news/kosovo-solar-energy-stunning-2025-advancements-proven/",
+    "PRK": {
+        "country_name": "North Korea",
+        "capacity_gw": 0.14,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "MDV": {
+        "country_name": "Maldives",
+        "capacity_gw": 0.07,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "PSE": {
+        "country_name": "Palestine",
+        "capacity_gw": 0.2,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "BRN": {
+        "country_name": "Brunei",
+        "capacity_gw": 0.005,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "SYR": {
+        "country_name": "Syria",
+        "capacity_gw": 0.06,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "LAO": {
+        "country_name": "Laos",
+        "capacity_gw": 0.06,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+
+    # ---------------- Caribbean ----------------
+    "ATG": {
+        "country_name": "Antigua and Barbuda",
+        "capacity_gw": 0.02,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "BRB": {
+        "country_name": "Barbados",
+        "capacity_gw": 0.07,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "DMA": {
+        "country_name": "Dominica",
+        "capacity_gw": 0.0003,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "GRD": {
+        "country_name": "Grenada",
+        "capacity_gw": 0.0035,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "KNA": {
+        "country_name": "Saint Kitts and Nevis",
+        "capacity_gw": 0.0045,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "LCA": {
+        "country_name": "Saint Lucia",
+        "capacity_gw": 0.005,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "VCT": {
+        "country_name": "Saint Vincent and the Grenadines",
+        "capacity_gw": 0.0045,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "BHS": {
+        "country_name": "Bahamas",
+        "capacity_gw": 0.02,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "HTI": {
+        "country_name": "Haiti",
+        "capacity_gw": 0.004,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "JAM": {
+        "country_name": "Jamaica",
+        "capacity_gw": 0.12,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "TTO": {
+        "country_name": "Trinidad and Tobago",
+        "capacity_gw": 0.0045,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+
+    # ---------------- Oceania ----------------
+    "FJI": {
+        "country_name": "Fiji",
+        "capacity_gw": 0.01,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "PNG": {
+        "country_name": "Papua New Guinea",
+        "capacity_gw": 0.005,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "SLB": {
+        "country_name": "Solomon Islands",
+        "capacity_gw": 0.006,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "VUT": {
+        "country_name": "Vanuatu",
+        "capacity_gw": 0.005,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "WSM": {
+        "country_name": "Samoa",
+        "capacity_gw": 0.016,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "TON": {
+        "country_name": "Tonga",
+        "capacity_gw": 0.02,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "FSM": {
+        "country_name": "Micronesia",
+        "capacity_gw": 0.007,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "PLW": {
+        "country_name": "Palau",
+        "capacity_gw": 0.02,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "KIR": {
+        "country_name": "Kiribati",
+        "capacity_gw": 0.004,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "NRU": {
+        "country_name": "Nauru",
+        "capacity_gw": 0.003,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "TUV": {
+        "country_name": "Tuvalu",
+        "capacity_gw": 0.0045,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "MHL": {
+        "country_name": "Marshall Islands",
+        "capacity_gw": 0.003,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "COK": {
+        "country_name": "Cook Islands",
+        "capacity_gw": 0.0055,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "PFY": {
+        "country_name": "French Polynesia",
+        "capacity_gw": 0.07,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "NIU": {
+        "country_name": "Niue",
+        "capacity_gw": 0.0018,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "ASM": {
+        "country_name": "American Samoa",
+        "capacity_gw": 0.007,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "GUM": {
+        "country_name": "Guam",
+        "capacity_gw": 0.10,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "TKL": {
+        "country_name": "Tokelau",
+        "capacity_gw": 0.001,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+
+    # ---------------- South America ----------------
+    "PRY": {
+        "country_name": "Paraguay",
+        "capacity_gw": 0.001,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "SUR": {
+        "country_name": "Suriname",
+        "capacity_gw": 0.01,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "VEN": {
+        "country_name": "Venezuela",
+        "capacity_gw": 0.004,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "GUY": {
+        "country_name": "Guyana",
+        "capacity_gw": 0.018,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+
+    # ---------------- Central America ----------------
+    "BLZ": {
+        "country_name": "Belize",
+        "capacity_gw": 0.007,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "NIC": {
+        "country_name": "Nicaragua",
+        "capacity_gw": 0.035,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+
+    # ---------------- Europe ----------------
+    "AND": {
+        "country_name": "Andorra",
+        "capacity_gw": 0.009,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
+    "ISL": {
+        "country_name": "Iceland",
+        "capacity_gw": 0.007,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+        },
+
+    # --- Missing entries identified on 2025-09-26 ---
+    "ATA": {
+        "country_name": "Antarctica",
+        "capacity_gw": 0.0002,
+        "source": "British Antarctic Survey renewable projects 2025 - https://www.bas.ac.uk/media-post/renewables-milestone-reached-in-antarctica/",
+    },
+    "ATF": {
+        "country_name": "French Southern and Antarctic Lands",
+        "capacity_gw": 0.0032,
+        "source": "green-overseas.org & TAAF renewable energy installations - http://www.green-overseas.org/en/pays-et-territoires/french-southern-and-antarctic-lands",
+    },
+    "FLK": {
+        "country_name": "Falkland Islands",
+        "capacity_gw": 0.0034,
+        "source": "Falkland Islands Energy Strategy & green-overseas.org - https://www.green-overseas.org/en/pays-et-territoires/falkland-islands",
+    },
+    "GRL": {
+        "country_name": "Greenland",
+        "capacity_gw": 0.001,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
+    },
+    "NCL": {
+        "country_name": "New Caledonia",
+        "capacity_gw": 0.185,
+        "source": "World Population Review 2025 - https://worldpopulationreview.com/country-rankings/solar-power-by-country",
     },
 }
 
@@ -623,4 +722,7 @@ manual_countries_df.index.name = "country_code"
 
 df = pd.concat([df, manual_countries_df])
 
-df.to_csv("solar_capacities.csv")
+# remove duplicate indices and will keep the last entry [which should be the manually added one]
+df = df[~df.index.duplicated(keep="last")]
+
+df.to_csv("src/v1/data/solar_capacities.csv")
