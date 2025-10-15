@@ -142,7 +142,7 @@ def main_page() -> None:
         "for actual the numbers we have used. ",
     )
     # Toggle to show stacked chart (top N countries + Other)
-    show_stacked = st.checkbox("Show stacked global chart (top 20 countries)", value=False)
+    show_stacked = st.checkbox("Show stacked global chart (top 10 countries)", value=False)
 
     if not show_stacked:
         fig = go.Figure(
@@ -169,7 +169,9 @@ def main_page() -> None:
         ).fillna(0)
 
         # pick top N countries by peak contribution
-        top_n = 20
+        # Reduced to 10 for readability
+
+        top_n = 10
         country_sums = pivot.sum().sort_values(ascending=False)
         top_countries = list(country_sums.head(top_n).index)
         other_countries = [c for c in pivot.columns if c not in top_countries]
