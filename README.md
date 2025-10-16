@@ -27,7 +27,8 @@ The **solar forecast** is very simple,
 - then we scaled it to the capacity of the country
 - We use `open.quartz.solar` which is for domestic solar, and uses free weather forecasts. 
 
-![image](./dashboard.png)
+![image](./dashboard1.png)
+![image](./dashboard2.png)
 
 ## Example usage
 
