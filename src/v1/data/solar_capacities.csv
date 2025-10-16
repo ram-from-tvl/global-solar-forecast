@@ -41,7 +41,6 @@ KAZ,1.2,Kazakhstan,Ember
 KEN,0.37,Kenya,Ember
 XKX,0.02,Kosovo,Ember
 KWT,0.1,Kuwait,Ember
-KGZ,0.0,Kyrgyzstan,Ember
 LVA,0.47,Latvia,Ember
 LTU,2.57,Lithuania,Ember
 LUX,0.52,Luxembourg,Ember
@@ -165,6 +164,7 @@ PSE,0.2,Palestine,Our World in Data - https://ourworldindata.org/grapher/install
 BRN,0.005,Brunei,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 SYR,0.06,Syria,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 LAO,0.06,Laos,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
+KGZ,8e-05,Kyrgyzstan,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 ATG,0.02,Antigua and Barbuda,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 BRB,0.07,Barbados,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity
 DMA,0.0003,Dominica,Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity

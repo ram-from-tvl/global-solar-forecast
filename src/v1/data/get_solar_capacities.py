@@ -493,6 +493,11 @@ manual_countries = {
         "capacity_gw": 0.06,
         "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
     },
+    "KGZ": {
+        "country_name": "Kyrgyzstan",
+        "capacity_gw": 0.00008,
+        "source": "Our World in Data - https://ourworldindata.org/grapher/installed-solar-pv-capacity",
+    },
 
     # ---------------- Caribbean ----------------
     "ATG": {
