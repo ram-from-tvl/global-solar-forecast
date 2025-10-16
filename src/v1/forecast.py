@@ -19,10 +19,13 @@ def get_forecast(
     if capacity == 0:
         return None
 
+    # Convert GW to kWp (1 GW = 1,000,000 kWp)
+    capacity_kwp = float(capacity) * 1_000_000.0
+
     site = {
         "latitude": lat,
         "longitude": lon,
-        "capacity_kwp": capacity,
+        "capacity_kwp": capacity_kwp,
         "tilt": abs(lat) / 2,
         "orientation": 180 if lat > 0 else 0,
     }

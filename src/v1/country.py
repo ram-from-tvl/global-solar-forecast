@@ -241,7 +241,8 @@ def country_page() -> None:
         return
 
     forecast = pd.DataFrame(forecast_data)
-    forecast = forecast.rename(columns={"power_kw": "power_gw"})
+    # API returns power_kw in kW; convert to GW
+    forecast["power_gw"] = forecast["power_kw"].astype(float) / 1_000_000.0
 
     # Convert timestamps to local time
     forecast = convert_utc_to_local_time(forecast, timezone_str)
