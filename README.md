@@ -2,7 +2,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 **Starting point for OCF projects**
@@ -71,6 +71,7 @@ Current there are not tests, but it would be great if some were added
       <td align="center" valign="top" width="14.28%"><a href="http://www.linkedin.com/in/ram-from-tvl"><img src="https://avatars.githubusercontent.com/u/114728749?v=4?s=100" width="100px;" alt="Ramkumar R"/><br /><sub><b>Ramkumar R</b></sub></a><br /><a href="#design-ram-from-tvl" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ritkaarsingh30"><img src="https://avatars.githubusercontent.com/u/85431642?v=4?s=100" width="100px;" alt="Ritkaar Singh"/><br /><sub><b>Ritkaar Singh</b></sub></a><br /><a href="https://github.com/openclimatefix/global-solar-forecast/commits?author=ritkaarsingh30" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sonata22"><img src="https://avatars.githubusercontent.com/u/112934863?v=4?s=100" width="100px;" alt="Nataliia Sosnovshchenko"/><br /><sub><b>Nataliia Sosnovshchenko</b></sub></a><br /><a href="https://github.com/openclimatefix/global-solar-forecast/commits?author=sonata22" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://waltermichelraja.netlify.app/"><img src="https://avatars.githubusercontent.com/u/85942041?v=4?s=100" width="100px;" alt="Walter Michel Raja"/><br /><sub><b>Walter Michel Raja</b></sub></a><br /><a href="https://github.com/openclimatefix/global-solar-forecast/commits?author=waltermichelraja" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
