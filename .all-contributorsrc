@@ -60,6 +60,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "waltermichelraja",
+      "name": "Walter Michel Raja",
+      "avatar_url": "https://avatars.githubusercontent.com/u/85942041?v=4",
+      "profile": "https://waltermichelraja.netlify.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
