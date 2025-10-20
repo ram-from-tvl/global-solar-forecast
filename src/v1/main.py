@@ -275,13 +275,17 @@ def main_page() -> None:
     )
 
     shapes_dict = json.loads(world.to_json())
+map_palette=[
+            "#4675c1", "#65b0c9", "#58b0a9", "#ffd480", "#faa056",
+            "#9cb6e1", "#a3d6e0", "#9ed1cd", "#ffe9bc", "#ffdabc"
+        ],
 
     fig = go.Figure(
         data=go.Choroplethmap(
             geojson=shapes_dict,
             locations=world.index,
             z=world["power_percentage" if normalized else "power_gw"],
-            colorscale=ocf_palette,
+            colorscale=map_palette,
             colorbar_title="Power [%]" if normalized else "Power [GW]",
             marker_opacity=0.5,
             hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>",
