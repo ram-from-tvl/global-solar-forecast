@@ -281,7 +281,12 @@ def main_page() -> None:
             geojson=shapes_dict,
             locations=world.index,
             z=world["power_percentage" if normalized else "power_gw"],
-            colorscale=ocf_palette,
+            colorscale=[
+                [0.0, 'blue'],
+                [0.33, 'green'],
+                [0.66, 'yellow'],
+                [1.0, 'orange']
+            ],
             colorbar_title="Power [%]" if normalized else "Power [GW]",
             marker_opacity=0.5,
             hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>",
