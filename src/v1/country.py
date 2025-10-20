@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 import pycountry
 import pytz
 import streamlit as st
+from constants import ocf_palette
 from forecast import get_forecast
 
 data_dir = "src/v1/data"
@@ -252,7 +253,7 @@ def country_page() -> None:
         data=go.Scatter(
             x=forecast.index,
             y=forecast["power_gw"],
-            marker_color="#FF4901",
+            marker_color=ocf_palette[0],
         ),
     )
     fig.update_layout(

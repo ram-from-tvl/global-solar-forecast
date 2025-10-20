@@ -1,21 +1,15 @@
 """Constants for the global solar forecast app."""
 
-# OCF colours (palette) - repeat if necessary
+# OCF colours (palette) - updated to new OCF colors
 ocf_palette = [
-    "#003f5c",
-    "#2f4b7c",
-    "#665191",
-    "#a05195",
-    "#d45087",
-    "#f95d6a",
-    "#ff7c43",
-    "#ffa600",
-    "#2ca02c",
-    "#1f77b4",
-    "#9467bd",
-    "#8c564b",
-    "#e377c2",
-    "#7f7f7f",
-    "#bcbd22",
-    "#17becf",
+    "#4675c1",
+    "#65b0c9",
+    "#58b0a9",
+    "#ffd480",
+    "#faa056",
+    "#9cb6e1",
+    "#a3d6e0",
+    "#9ed1cd",
+    "#ffe9bc",
+    "#ffdabc",
 ]
