@@ -157,7 +157,7 @@ def main_page() -> None:
             data=go.Scatter(
                 x=total_forecast["timestamp"],
                 y=total_forecast["power_gw"],
-                marker_color="#FF4901",
+                marker_color=ocf_palette[0],
             ),
         )
         fig.update_layout(
@@ -281,7 +281,12 @@ def main_page() -> None:
             geojson=shapes_dict,
             locations=world.index,
             z=world["power_percentage" if normalized else "power_gw"],
-            colorscale="Viridis",
+            colorscale=[
+                [0.0, "#4675c1"],   # blue
+                [0.33, "#58b0a9"],  # green/teal
+                [0.66, "#ffd480"],  # yellow
+                [1.0, "#faa056"],   # orange
+            ],
             colorbar_title="Power [%]" if normalized else "Power [GW]",
             marker_opacity=0.5,
             hovertemplate="<b>%{customdata}</b><br>Power: %{z:.2f} GW<extra></extra>",
