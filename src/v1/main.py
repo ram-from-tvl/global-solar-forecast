@@ -282,10 +282,10 @@ def main_page() -> None:
             locations=world.index,
             z=world["power_percentage" if normalized else "power_gw"],
             colorscale=[
-                [0.0, "blue"],
-                [0.33, "green"],
-                [0.66, "yellow"],
-                [1.0, "orange"],
+                [0.0, "#4675c1"],   # blue
+                [0.33, "#58b0a9"],  # green/teal
+                [0.66, "#ffd480"],  # yellow
+                [1.0, "#faa056"],   # orange
             ],
             colorbar_title="Power [%]" if normalized else "Power [GW]",
             marker_opacity=0.5,
